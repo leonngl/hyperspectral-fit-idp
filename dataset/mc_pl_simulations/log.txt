@@ -1,0 +1,34 @@
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io/                 #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io/#
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=1 (NVIDIA GeForce GTX 1050) threadph=4882 extra=8320 np=50000000 nthread=10240 maxgate=1 repetition=1
+initializing streams ...	init complete : 165 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0,00e+00ns 5,00e+00ns] ...
+simulation run# 1 ... 
+kernel complete:  	174247 ms
+retrieving fields ... 	detected 48270301 photons, total: 48270301	transfer complete:	177471 ms
+normalizing raw data ...	source 1, normalization factor alpha=400,000000
+data normalization complete : 180009 ms
+simulated 50000000 photons (50000000) with 10240 threads (repeat x1)
+MCX simulation speed: 287,26 photon/ms
+total simulated energy: 50000000,00	absorbed: 99,84941%
+(loss due to initial specular reflection is excluded in the total)
