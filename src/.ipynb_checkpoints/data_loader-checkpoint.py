@@ -27,7 +27,7 @@ class DataLoader():
         self.params_ref_blood_vessel = np.array([1.836, 0.488, 0, 0, 0.55, 0.01, 22.0, 0.660])
         self.params_ref_blood_vessel_fraction = mbll_functions.concentrations_to_blood_fraction(self.params_ref_blood_vessel)
 
-    # absorption coefficients in 1/(mM*cm)
+    # absorption coefficients in OD/(mM*cm)
     def absorption_coefs(self, use_diff_oxycco=True, use_water_and_fat=False):
         molecules, x = preprocessing.read_molecules(self.wavelength_left_cut, self.wavelength_right_cut, self.wavelengths)
         y_hbo2_f, y_hb_f, y_coxa, y_creda, y_water, y_fat = molecules
