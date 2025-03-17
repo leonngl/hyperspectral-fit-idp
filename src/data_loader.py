@@ -8,6 +8,13 @@ import imageio
 import mbll_functions
 
 class DataLoader():
+
+    # reference values in [1/cm]
+    params_ref_gray_matter = np.array([0.0646, 0.0114, 0.0064, 0.0016, 0.73, 0.1, 40.8, 3.089])
+    params_ref_gray_matter_fraction = mbll_functions.concentrations_to_blood_fraction(params_ref_gray_matter)
+    params_ref_blood_vessel = np.array([1.836, 0.488, 0, 0, 0.55, 0.01, 22.0, 0.660])
+    params_ref_blood_vessel_fraction = mbll_functions.concentrations_to_blood_fraction(params_ref_blood_vessel)
+
     
     def __init__(self, path, wavelength_left_cut, wavelength_right_cut):
         assert(wavelength_left_cut < wavelength_right_cut)
@@ -19,14 +26,7 @@ class DataLoader():
             self.path = Path(path)
         else:
             self.path = path
-
-
-        # reference values in [1/cm]
-        self.params_ref_gray_matter = np.array([0.0646, 0.0114, 0.0064, 0.0016, 0.73, 0.1, 40.8, 3.089])
-        self.params_ref_gray_matter_fraction = mbll_functions.concentrations_to_blood_fraction(self.params_ref_gray_matter)
-        self.params_ref_blood_vessel = np.array([1.836, 0.488, 0, 0, 0.55, 0.01, 22.0, 0.660])
-        self.params_ref_blood_vessel_fraction = mbll_functions.concentrations_to_blood_fraction(self.params_ref_blood_vessel)
-
+        
     # absorption coefficients in 1/(mM*cm)
     def absorption_coefs(self, use_diff_oxycco=True, use_water_and_fat=False):
         molecules, x = preprocessing.read_molecules(self.wavelength_left_cut, self.wavelength_right_cut, self.wavelengths)
@@ -54,13 +54,34 @@ class DataLoader():
                 np.asarray(y_water)[None, :].transpose(),
                 np.asarray(y_fat)[None, :].transpose(),
         ))
-
         
         return mu_a_matrix
 
     # wavelengths in nm, result in cm^-1
     def absorption_coef_background(self):
         return 7.84e8*self.wavelengths**(-3.255)
+
+    @staticmethod
+    def mu_a_func_gray_matter(wl):
+        tmp_loader = DataLoader(None, np.min(wl), np.max(wl))
+        tmp_loader.wavelengths = np.array(wl)
+        mu_a_matrix = tmp_loader.absorption_coefs(use_diff_oxycco=False, use_water_and_fat=True)
+        return mu_a_matrix @ DataLoader.params_ref_gray_matter[:6]
+    
+    @staticmethod
+    def mu_a_func_blood_vessel(wl):
+        tmp_loader = DataLoader(None, np.min(wl), np.max(wl))
+        tmp_loader.wavelengths = np.array(wl)
+        mu_a_matrix = tmp_loader.absorption_coefs(use_diff_oxycco=False, use_water_and_fat=True)
+        return mu_a_matrix @ DataLoader.params_ref_blood_vessel[:6]
+    
+    @staticmethod
+    def mu_s_red_func_gray_matter(wl):
+        return DataLoader.params_ref_gray_matter[-2] * np.power((wl/500), -DataLoader.params_ref_gray_matter[-1])
+    
+    @staticmethod
+    def mu_s_red_func_blood_vessel(wl):
+        return DataLoader.params_ref_blood_vessel[-2] * np.power((wl/500), -DataLoader.params_ref_blood_vessel[-1])
        
 
 class DataLoaderNIRS(DataLoader):
