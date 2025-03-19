@@ -18,3 +18,6 @@ mcs_func_path = data_dir / "mcs_function_data/function_data.npz"
 mol_weight_HbT = 64500 # [g/mol]
 density_HbT = 150 # [g/L]
 c_pure_HbT = (density_HbT / mol_weight_HbT) * 1e3 # [mM = mmol/L]
+
+
+gpuid = 2
