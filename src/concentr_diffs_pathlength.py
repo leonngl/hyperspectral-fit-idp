@@ -5,7 +5,8 @@ from ray import tune, train
 import numpy as np
 from scipy.linalg import pinv
 import math
-
+import concurrent.futures
+from functools import partial
 
 
 def concentr_fit_mbll(A, wavelengths, mu_a_matrix, pathlengths):
@@ -42,6 +43,59 @@ def concentr_fit_mbll(A, wavelengths, mu_a_matrix, pathlengths):
 
 # functions take mu_a, wavelengths, c 
 
+
+def concentr_fit_nonlinear_concurrent(
+    A,
+    wavelengths,
+    mu_a,
+    func,
+    ref_vals,
+    variables_bool_arr,
+    left_bounds,
+    right_bounds,
+    jacobian=None,
+    constraint=None,
+    is_delta_A=False,
+    init_vals=None,
+    update_init=True,
+    progress_bar=False,
+    num_processes=6
+):
+    concentr_fit_nonlinear_curried = partial(
+        concentr_fit_nonlinear,
+        wavelengths=wavelengths,
+        mu_a=mu_a,
+        func=func,
+        ref_vals=ref_vals,
+        variables_bool_arr=variables_bool_arr,
+        left_bounds=left_bounds,
+        right_bounds=right_bounds,
+        jacobian=jacobian,
+        constraint=constraint,
+        is_delta_A=is_delta_A,
+        init_vals=init_vals,
+        update_init=update_init,
+        progress_bar=progress_bar
+    )
+
+    num_vars = np.count_nonzero(variables_bool_arr)
+    _, num_spectra = A.shape
+    x = np.empty((num_vars, num_spectra))
+    errors = np.empty_like(A)
+
+    with concurrent.futures.ProcessPoolExecutor(max_workers=num_processes) as executor:
+        start_idx = 0
+        for i, (cur_x, cur_errors) in enumerate(executor.map(concentr_fit_nonlinear_curried, np.array_split(A, num_processes, axis=1))):
+            cur_len = cur_x.shape[1]
+            end_idx = start_idx+cur_len
+            x[:, start_idx:end_idx] = cur_x
+            errors[:, start_idx:end_idx] = cur_errors
+            start_idx = end_idx
+            print(f"Process {i}/{num_processes} finished.")
+    
+    return x, errors
+
+
 def concentr_fit_nonlinear(
     A,
     wavelengths,
@@ -55,6 +109,7 @@ def concentr_fit_nonlinear(
     constraint=None,
     is_delta_A=False,
     init_vals=None,
+    update_init=True,
     progress_bar=False
 ):
 
@@ -116,7 +171,7 @@ def concentr_fit_nonlinear(
         for t in tqdm(range(num_spectra), disable=~progress_bar):
             res = least_squares(
                 func_wrapper,
-                x[:, t-1] if t > 0 else init_vals,
+                x[:, t-1] if t > 0 and update_init else init_vals,
                 bounds=(left_bounds, right_bounds),
                 jac="2-point" if jacobian is None else jacobian_wrapper,
                 args=(A[:, t], A_ref)
@@ -125,7 +180,8 @@ def concentr_fit_nonlinear(
             x[:, t] = res.x
             errors[:, t] = res.cost
 
-            #print(t)
+            if progress_bar:
+                print(t)
     else:
         bounds = Bounds(left_bounds.astype(float), right_bounds.astype(float), keep_feasible=True)
         constraint_matrix, lower_constraint_bounds, upper_constraint_bounds = constraint
@@ -160,7 +216,10 @@ def concentr_fit_nonlinear_hyperparam_search(
     variables_bool_arr,
     left_bounds,
     right_bounds,
+    jacobian=None,
+    constraint=None,
     is_delta_A=False,
+    update_init=True,
     spectra_per_report=1,
     grace_spectra=1,
     num_samples=100,
@@ -189,8 +248,11 @@ def concentr_fit_nonlinear_hyperparam_search(
                 variables_bool_arr,
                 left_bounds,
                 right_bounds,
+                jacobian,
+                constraint,
                 is_delta_A,
-                init_vals=x[:, t-1] if t > 0 else None
+                init_vals=x[:, t-1] if t > 0 else None,
+                update_init=update_init
             )
 
             train.report({"sq_avg_error": np.sum(errors[:, t:t+spectra_per_report]**2) / num_wavelengths / (min(t + spectra_per_report, num_spectra) - t)})
