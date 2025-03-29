@@ -7,6 +7,7 @@ from scipy.linalg import pinv
 import math
 import concurrent.futures
 from functools import partial
+import multiprocessing
 
 
 def concentr_fit_mbll(A, wavelengths, mu_a_matrix, pathlengths):
@@ -85,7 +86,7 @@ def concentr_fit_nonlinear_concurrent(
 
     with concurrent.futures.ProcessPoolExecutor(max_workers=num_processes) as executor:
         start_idx = 0
-        for i, (cur_x, cur_errors) in enumerate(executor.map(concentr_fit_nonlinear_curried, np.array_split(A, num_processes, axis=1))):
+        for i, (cur_x, cur_errors) in enumerate(executor.map(concentr_fit_nonlinear_curried, np.array_split(A, min(num_processes, multiprocessing.cpu_count()), axis=1))):
             cur_len = cur_x.shape[1]
             end_idx = start_idx+cur_len
             x[:, start_idx:end_idx] = cur_x
@@ -223,7 +224,8 @@ def concentr_fit_nonlinear_hyperparam_search(
     spectra_per_report=1,
     grace_spectra=1,
     num_samples=100,
-    time_budget_s=3600
+    time_budget_s=3600,
+    max_concurrent_trials=16
 ):
 
     num_vars = np.count_nonzero(variables_bool_arr)
@@ -272,7 +274,8 @@ def concentr_fit_nonlinear_hyperparam_search(
             mode="min",
             scheduler=scheduler,
             num_samples=num_samples,
-            time_budget_s=time_budget_s
+            time_budget_s=time_budget_s,
+            max_concurrent_trials=min(max_concurrent_trials, multiprocessing.cpu_count())
         )
     )
 
