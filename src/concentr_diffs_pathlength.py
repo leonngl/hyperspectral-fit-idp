@@ -257,7 +257,7 @@ def concentr_fit_nonlinear_hyperparam_search(
                 update_init=update_init
             )
 
-            train.report({"sq_avg_error": np.sum(errors[:, t:t+spectra_per_report]**2) / num_wavelengths / (min(t + spectra_per_report, num_spectra) - t)})
+            tune.report({"sq_avg_error": np.sum(errors[:, t:t+spectra_per_report]**2) / num_wavelengths / (min(t + spectra_per_report, num_spectra) - t)})
     
     grace_reports = math.ceil(grace_spectra / spectra_per_report)
     param_space_dict = {str(i) : param_space[i] for i in range(num_vals)}
