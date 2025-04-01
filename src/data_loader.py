@@ -59,7 +59,7 @@ class DataLoader():
         
         for i, mol in enumerate(["H2O", "Fat"]):
             spectra_vals = np.loadtxt(config.caredda_spectra / f"mua_{mol}.txt")
-            mu_a_matrix[:, -2 + 0] = np.interp(wavelengths, spectra_wavelengths, spectra_vals)
+            mu_a_matrix[:, -2 + i] = np.interp(wavelengths, spectra_wavelengths, spectra_vals)
         
         return mu_a_matrix
         
@@ -99,16 +99,12 @@ class DataLoader():
 
     @staticmethod
     def mu_a_func_gray_matter(wl):
-        tmp_loader = DataLoader(None, np.min(wl), np.max(wl))
-        tmp_loader.wavelengths = np.array(wl)
-        mu_a_matrix = tmp_loader.absorption_coefs(use_diff_oxycco=False, use_water_and_fat=True)
+        mu_a_matrix = DataLoader.absorption_coefs(wl, use_diff_oxycco=False, use_water_and_fat=True)
         return mu_a_matrix @ DataLoader.params_ref_gray_matter[:6]
     
     @staticmethod
     def mu_a_func_blood_vessel(wl):
-        tmp_loader = DataLoader(None, np.min(wl), np.max(wl))
-        tmp_loader.wavelengths = np.array(wl)
-        mu_a_matrix = tmp_loader.absorption_coefs(use_diff_oxycco=False, use_water_and_fat=True)
+        mu_a_matrix = DataLoader.absorption_coefs(use_diff_oxycco=False, use_water_and_fat=True)
         return mu_a_matrix @ DataLoader.params_ref_blood_vessel[:6]
     
     @staticmethod
@@ -188,9 +184,7 @@ class DataLoaderHELICOID(DataLoader):
         super().__init__(path, wavelength_left_cut, wavelength_right_cut)
         self.patient_id = None
         self.num_wavelengths = num_wavelengths
-    
-    def load_data(self, patient_id):
-        
+
         self.wavelengths = np.linspace(400, 1000, 826)
         wavelength_idxs = (self.wavelengths >= self.wavelength_left_cut) & (self.wavelengths <= self.wavelength_right_cut)
         if self.num_wavelengths is not None:
@@ -199,8 +193,10 @@ class DataLoaderHELICOID(DataLoader):
             new_idxs = np.array([False] * len(wavelength_idxs))
             new_idxs[keep_idxs] = True
             wavelength_idxs &= new_idxs
+        self.wavelength_idxs = wavelength_idxs
         self.wavelengths = self.wavelengths[wavelength_idxs]
-
+    
+    def load_data(self, patient_id):
         p = self.path / patient_id
         raw_data = open_image(p / "raw.hdr").load()
         white_reference = open_image(p / "whiteReference.hdr").load()
@@ -208,7 +204,7 @@ class DataLoaderHELICOID(DataLoader):
         self.label_map = np.squeeze(open_image(p / "gtMap.hdr").load())
         self.reflectance = (raw_data - dark_reference) / (white_reference - dark_reference)
         self.reflectance = np.transpose(self.reflectance, (2, 0, 1)) # move wavelength axis to front
-        self.reflectance = self.reflectance[wavelength_idxs, ...] # choose desired wavelengths
+        self.reflectance = self.reflectance[self.wavelength_idxs, ...] # choose desired wavelengths
         self.reflectance[self.reflectance <= 0] = 1e-5 #prevent 0 value in log
 
         self.patient_id = patient_id
