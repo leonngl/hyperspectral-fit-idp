@@ -6,6 +6,7 @@ import scipy
 from spectral import open_image
 import imageio
 import mbll_functions
+import config
 
 class DataLoader():
 
@@ -26,9 +27,44 @@ class DataLoader():
             self.path = Path(path)
         else:
             self.path = path
+
+        # instance method uses loader wavelengths
+        self.absorption_coefs = lambda use_diff_oxycco, use_water_and_fat: DataLoader.absorption_coefs(self.wavelengths, use_diff_oxycco, use_water_and_fat)
+
+
+    @staticmethod
+    def absorption_coefs(wavelengths, use_diff_oxycco=False, use_water_and_fat=True):
+        spectra_wavelengths = np.loadtxt(config.caredda_spectra / "lambda.txt")
+
+        if not np.all(np.diff(spectra_wavelengths) > 0):
+            raise ValueError("Error in spectra wavelenghts: Values not ascending.")
+    
+        if wavelengths[0] < spectra_wavelengths[0] or wavelengths[-1] > spectra_wavelengths[-1]:
+            raise ValueError("Requested wavelength outside of spectra wavelengths.")
+        
+        mu_a_matrix = np.empty((len(wavelengths), 4 + use_water_and_fat * 2))
+        
+        for i, mol in enumerate(["HbO2", "Hb", "oxCCO", "redCCO"]):
+            spectra_vals = np.loadtxt(config.caredda_spectra / f"eps_{mol}.txt") / 1e3 * np.log(10)
+            mu_a_matrix[:, i] = np.interp(wavelengths, spectra_wavelengths, spectra_vals)
+        
+        if use_diff_oxycco:
+            mu_a_matrix_diff = np.empty((len(wavelengths), mu_a_matrix.shape[1]-1))
+            mu_a_matrix_diff[:, :3] = mu_a_matrix[:, :3]
+            mu_a_matrix_diff[:, 2] -= mu_a_matrix[3]
+            mu_a_matrix = mu_a_matrix_diff
+        
+        if not use_water_and_fat:
+            return mu_a_matrix
+        
+        for i, mol in enumerate(["H2O", "Fat"]):
+            spectra_vals = np.loadtxt(config.caredda_spectra / f"mua_{mol}.txt")
+            mu_a_matrix[:, -2 + 0] = np.interp(wavelengths, spectra_wavelengths, spectra_vals)
+        
+        return mu_a_matrix
         
     # absorption coefficients in 1/(mM*cm)
-    def absorption_coefs(self, use_diff_oxycco=True, use_water_and_fat=False):
+    def absorption_coefs_old(self, use_diff_oxycco=True, use_water_and_fat=False):
         molecules, x = preprocessing.read_molecules(self.wavelength_left_cut, self.wavelength_right_cut, self.wavelengths)
         y_hbo2_f, y_hb_f, y_coxa, y_creda, y_water, y_fat = molecules
         if not (x == self.wavelengths).all():
