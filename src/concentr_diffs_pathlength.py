@@ -137,6 +137,10 @@ def concentr_fit_nonlinear(
         return res  
 
     # only works if all variables (molecules and params) are optimized!
+
+    if not all(variables_bool_arr) and jacobian is not None:
+        raise NotImplementedError("To use jacobian, all variables have to be optimized.")
+
     def jacobian_wrapper(x, *args):
         c = x[:num_molecules]
         params = x[num_molecules:]
