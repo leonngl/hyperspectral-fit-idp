@@ -10,19 +10,16 @@ class SimulationAttenuation():
         data = np.load(path)
         self.nphoton = data["arr_0"]
         self.g = 0.9
-        self.mu_s_vals = data["arr_1"]
+        self.mu_s_vals = data["arr_1"] # expected to be in cm^-1
         self.num_mu_s_vals = len(self.mu_s_vals)
         self.delta_mu_s = self.mu_s_vals[1] - self.mu_s_vals[0]
         max_ndetected_photons = max([data[f"arr_{i+2}"].shape[1] for i in range(self.num_mu_s_vals)])
         self.photon_data = np.empty((self.num_mu_s_vals, 2, max_ndetected_photons))
-        self.photon_data[:, 0, :] = np.inf
+        self.photon_data[:, 0, :] = np.inf # pathlengths expected to be in cm
         self.photon_data[:, 1, :] = 0
         for i in range(self.num_mu_s_vals):
             cur_ndetected_photons = data[f"arr_{i+2}"].shape[1]
             self.photon_data[i, :, :cur_ndetected_photons] = data[f"arr_{i+2}"]
-        
-        # MCX stores lengths in mm, we use cm
-        self.photon_data[:, 0, :] /= 10
 
         print(f"Loaded data with {self.nphoton} photons and {self.num_mu_s_vals} values for mu_s.")
     
