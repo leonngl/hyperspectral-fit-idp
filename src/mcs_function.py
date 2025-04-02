@@ -70,8 +70,8 @@ class SimulationAttenuation():
         total_weights_lower = np.sum(weights_lower, axis=-1)
         A_upper = -np.log(total_weights_upper / self.nphoton)
         A_lower = -np.log(total_weights_lower / self.nphoton)
-        weighted_pl_upper = np.sum(np.nan_to_num(weights_upper * self.photon_data[mu_s_upper_idxs, 0, :]), axis=-1) / total_weights_upper
-        weighted_pl_lower = np.sum(np.nan_to_num(weights_lower * self.photon_data[mu_s_upper_idxs - 1, 0, :]), axis=-1) / total_weights_lower
+        weighted_pl_upper = np.sum(weights_upper * np.nan_to_num(self.photon_data[mu_s_upper_idxs, 0, :]), axis=-1) / total_weights_upper
+        weighted_pl_lower = np.sum(weights_lower * np.nan_to_num(self.photon_data[mu_s_upper_idxs - 1, 0, :]), axis=-1) / total_weights_lower
 
         jacobian = np.empty((mu_a.shape + (2,)))
         jacobian[..., 0] = (mu_s - self.mu_s_vals[mu_s_upper_idxs - 1]) * weighted_pl_upper
@@ -90,17 +90,16 @@ class SimulationAttenuation():
         num_spectra = c.shape[1]
 
         mu_a = mu_a_matrix @ c
-        mu_s_red_no_a = (wavelengths/500)[:, None] ** (-b)
-        mu_s_red = mu_s_red_no_a * a
-        mu_s = mu_s_red / (1 - self.g)
+        mu_s_no_a = ((wavelengths/500)[:, None] ** (-b)) / (1 - self.g)
+        mu_s = mu_s_no_a * a
 
         jacobian_c = np.empty((len(wavelengths), num_spectra, num_molecules + 2))
         jacobian_base = self.jacobian(mu_a, mu_s)
         jacobian_c[..., :num_molecules] = jacobian_base[..., [0]]
         jacobian_c[..., num_molecules:] = jacobian_base[..., [1]]
         jacobian_c[..., :num_molecules] *= mu_a_matrix[:, None, :]
-        jacobian_c[..., -2] *= mu_s_red_no_a
-        jacobian_c[..., -1] *= -a * b * ((wavelengths/500)[:, None] ** (-b-1))
+        jacobian_c[..., -2] *= mu_s_no_a
+        jacobian_c[..., -1] *= -a * b * ((wavelengths/500)[:, None] ** (-b-1)) / (1 - self.g)
         
         # first fill with dA/dmu_A and dA/dmu_s
         #weighted_nscat_upper = np.sum(weights_upper * self.photon_data[mu_s_upper_idxs, 1, :], axis=-1) / total_weights_upper
