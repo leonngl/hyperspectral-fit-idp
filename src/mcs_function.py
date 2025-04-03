@@ -9,17 +9,18 @@ class SimulationAttenuation():
         self.path = path
         data = np.load(path)
         self.nphoton = data["arr_0"]
-        self.g = 0.9
-        self.mu_s_vals = data["arr_1"] # expected to be in cm^-1
+        self.g = data["arr_1"]
+        self.mu_s_vals = data["arr_2"] # expected to be in cm^-1
         self.num_mu_s_vals = len(self.mu_s_vals)
         self.delta_mu_s = self.mu_s_vals[1] - self.mu_s_vals[0]
-        max_ndetected_photons = max([data[f"arr_{i+2}"].shape[1] for i in range(self.num_mu_s_vals)])
+        self.first_mu_s = self.mu_s_vals[0]
+        max_ndetected_photons = max([data[f"arr_{i+3}"].shape[1] for i in range(self.num_mu_s_vals)])
         self.photon_data = np.empty((self.num_mu_s_vals, 2, max_ndetected_photons))
         self.photon_data[:, 0, :] = np.inf # pathlengths expected to be in cm
         self.photon_data[:, 1, :] = 0
         for i in range(self.num_mu_s_vals):
-            cur_ndetected_photons = data[f"arr_{i+2}"].shape[1]
-            self.photon_data[i, :, :cur_ndetected_photons] = data[f"arr_{i+2}"]
+            cur_ndetected_photons = data[f"arr_{i+3}"].shape[1]
+            self.photon_data[i, :, :cur_ndetected_photons] = data[f"arr_{i+3}"]
 
         print(f"Loaded data with {self.nphoton} photons and {self.num_mu_s_vals} values for mu_s.")
     
@@ -27,7 +28,8 @@ class SimulationAttenuation():
         return np.exp(-mu_a[..., None] * self.photon_data[mu_s_idx, 0, :])
         
     def A(self, mu_a, mu_s):
-        mu_s_upper_idxs = np.clip(np.searchsorted(self.mu_s_vals, mu_s), 1, self.num_mu_s_vals - 1)
+        #mu_s_upper_idxs = np.clip(np.searchsorted(self.mu_s_vals, mu_s), 1, self.num_mu_s_vals - 1)
+        mu_s_upper_idxs = np.clip(np.ceil((mu_s - self.first_mu_s) / self.delta_mu_s), 1, self.num_mu_s_vals - 1).astype(int)
         weights_upper = self.compute_weights(mu_a, mu_s_upper_idxs)
         weights_lower = self.compute_weights(mu_a, mu_s_upper_idxs - 1)
         A_upper = -np.log(np.sum(weights_upper, axis=-1) / self.nphoton)
@@ -63,7 +65,8 @@ class SimulationAttenuation():
     # returns dA(mu_a, mu_s)/dmu_a and dA/dmu_s
     # if shape_mu is the shape of mu_a and mu_s, then return value has shape shape_mu + (2,)
     def jacobian(self, mu_a, mu_s):
-        mu_s_upper_idxs = np.clip(np.searchsorted(self.mu_s_vals, mu_s), 1, self.num_mu_s_vals - 1)
+        #mu_s_upper_idxs = np.clip(np.searchsorted(self.mu_s_vals, mu_s), 1, self.num_mu_s_vals - 1)
+        mu_s_upper_idxs = np.clip(np.ceil((mu_s - self.first_mu_s) / self.delta_mu_s), 1, self.num_mu_s_vals - 1).astype(int)
         weights_upper = self.compute_weights(mu_a, mu_s_upper_idxs)
         weights_lower = self.compute_weights(mu_a, mu_s_upper_idxs - 1)
         total_weights_upper = np.sum(weights_upper, axis=-1)
@@ -99,7 +102,7 @@ class SimulationAttenuation():
         jacobian_c[..., num_molecules:] = jacobian_base[..., [1]]
         jacobian_c[..., :num_molecules] *= mu_a_matrix[:, None, :]
         jacobian_c[..., -2] *= mu_s_no_a
-        jacobian_c[..., -1] *= -a * b * ((wavelengths/500)[:, None] ** (-b-1)) / (1 - self.g)
+        jacobian_c[..., -1] *= -mu_s * np.log(wavelengths/500)[:, None]
         
         # first fill with dA/dmu_A and dA/dmu_s
         #weighted_nscat_upper = np.sum(weights_upper * self.photon_data[mu_s_upper_idxs, 1, :], axis=-1) / total_weights_upper
@@ -132,9 +135,8 @@ class SimulationAttenuation():
         c_Hbb = c_Hbb_pure * f_blood
 
         mu_a = mu_a_matrix @ np.row_stack((c_HbO2, c_Hbb, c[2:]))
-        mu_s_red_no_a = (wavelengths/500)[:, None] ** (-b)
-        mu_s_red = mu_s_red_no_a * a
-        mu_s = mu_s_red / (1 - self.g)
+        mu_s_no_a = ((wavelengths/500)[:, None] ** (-b)) / (1-self.g)
+        mu_s = mu_s_no_a * a
 
         jacobian_f = np.empty((len(wavelengths), num_spectra, num_molecules + 2))
         jacobian_base = self.jacobian(mu_a, mu_s)
@@ -143,8 +145,8 @@ class SimulationAttenuation():
         jacobian_f[..., 0] *= c_HbO2_pure[None, :] * mu_a_matrix[:, None, 0] + c_Hbb_pure[None, :] * mu_a_matrix[:, None, 1]
         jacobian_f[..., 1] *= f_blood[None, :] * config.c_pure_HbT * (mu_a_matrix[:, None, 0] - mu_a_matrix[:, None, 1])
         jacobian_f[..., 2:num_molecules] *= mu_a_matrix[:, None, 2:]
-        jacobian_f[..., -2] *= mu_s_red_no_a
-        jacobian_f[..., -1] *= -a * b * ((wavelengths/500)[:, None] ** (-b-1))
+        jacobian_f[..., -2] *= mu_s_no_a
+        jacobian_f[..., -1] *= -mu_s * np.log(wavelengths/500)[:, None]
 
         return jacobian_f
 

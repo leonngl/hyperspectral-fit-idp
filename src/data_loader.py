@@ -104,7 +104,7 @@ class DataLoader():
     
     @staticmethod
     def mu_a_func_blood_vessel(wl):
-        mu_a_matrix = DataLoader.absorption_coefs(use_diff_oxycco=False, use_water_and_fat=True)
+        mu_a_matrix = DataLoader.absorption_coefs(wl, use_diff_oxycco=False, use_water_and_fat=True)
         return mu_a_matrix @ DataLoader.params_ref_blood_vessel[:6]
     
     @staticmethod

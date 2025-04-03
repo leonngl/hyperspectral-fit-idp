@@ -134,17 +134,18 @@ def concentr_fit_nonlinear(
             res += A_ref[:, 0]
         if sum_and_square:
             res = np.sum(res**2)
-        return res  
+        return res
 
     # only works if all variables (molecules and params) are optimized!
 
     if not all(variables_bool_arr) and jacobian is not None:
         raise NotImplementedError("To use jacobian, all variables have to be optimized.")
 
-    def jacobian_wrapper(x, *args):
+    def jacobian_wrapper(x, *args, **kwargs):
         c = x[:num_molecules]
         params = x[num_molecules:]
-        jacobian_val = jacobian(wavelengths, mu_a, c, *params)  
+        # don't forget to add minus to jacobian!
+        jacobian_val = -jacobian(wavelengths, mu_a, c, *params)  
         return jacobian_val[:, 0, :]  
     
     A_ref = None
@@ -179,7 +180,9 @@ def concentr_fit_nonlinear(
                 x[:, t-1] if t > 0 and update_init else init_vals,
                 bounds=(left_bounds, right_bounds),
                 jac="2-point" if jacobian is None else jacobian_wrapper,
-                args=(A[:, t], A_ref)
+                args=(A[:, t], A_ref),
+                x_scale="jac",
+                verbose=2
             )
 
             x[:, t] = res.x
