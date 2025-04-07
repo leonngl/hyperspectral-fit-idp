@@ -60,6 +60,7 @@ def concentr_fit_nonlinear_concurrent(
     init_vals=None,
     update_init=True,
     progress_bar=False,
+    verbosity=0,
     num_processes=6
 ):
     concentr_fit_nonlinear_curried = partial(
@@ -76,7 +77,8 @@ def concentr_fit_nonlinear_concurrent(
         is_delta_A=is_delta_A,
         init_vals=init_vals,
         update_init=update_init,
-        progress_bar=progress_bar
+        progress_bar=progress_bar,
+        verbosity=verbosity
     )
 
     num_vars = np.count_nonzero(variables_bool_arr)
@@ -111,7 +113,8 @@ def concentr_fit_nonlinear(
     is_delta_A=False,
     init_vals=None,
     update_init=True,
-    progress_bar=False
+    progress_bar=False,
+    verbosity=0
 ):
 
     num_wavelengths, num_spectra = A.shape
@@ -182,7 +185,7 @@ def concentr_fit_nonlinear(
                 jac="2-point" if jacobian is None else jacobian_wrapper,
                 args=(A[:, t], A_ref),
                 x_scale="jac",
-                verbose=2
+                verbose=verbosity
             )
 
             x[:, t] = res.x
@@ -261,7 +264,8 @@ def concentr_fit_nonlinear_hyperparam_search(
                 constraint,
                 is_delta_A,
                 init_vals=x[:, t-1] if t > 0 else None,
-                update_init=update_init
+                update_init=update_init,
+                verbosity=0
             )
 
             tune.report({"sq_avg_error": np.sum(errors[:, t:t+spectra_per_report]**2) / num_wavelengths / (min(t + spectra_per_report, num_spectra) - t)})
