@@ -45,6 +45,71 @@ def concentr_fit_mbll(A, wavelengths, mu_a_matrix, pathlengths):
 # functions take mu_a, wavelengths, c 
 
 
+def concentr_fit_nonlinear_ref_optimization(
+    A,
+    wavelengths,
+    mu_a,
+    func,
+    ref_idx, # idx of reference spectrum
+    ref_vals=None,
+    variables_bool_arr=np.array([True]*6),
+    left_bounds=None,
+    right_bounds=None,
+    init_vals=None,
+    verbosity=0
+):
+    
+    num_wavelengths, num_spectra = A.shape
+    num_molecules = mu_a.shape[1]
+    num_vals = len(variables_bool_arr)
+    num_params = num_vals - num_molecules
+    num_vars = np.count_nonzero(variables_bool_arr)
+    num_molecule_vars = np.count_nonzero(variables_bool_arr[:num_molecules])
+
+    if not all(variables_bool_arr) and len(variables_bool_arr) != (num_molecules + 2):
+        raise NotImplementedError("Works only when optimizing for all parameters.")
+    
+    # A is now of size (wavelenghts, spectra)
+    def func_wrapper(x, A, ref_idx):
+        x = x.reshape(num_vars, num_spectra)
+        c_full = np.empty((num_molecules, num_spectra))
+        c_full[variables_bool_arr[:num_molecules], :] = x[:num_molecule_vars, :]
+        c_full[~variables_bool_arr[:num_molecules], :] = ref_vals[~variables_bool_arr][:(num_molecules - num_molecule_vars)]
+        params = np.empty((num_params, num_spectra))
+        params[variables_bool_arr[num_molecules:]] = x[num_molecule_vars:]
+        params[~variables_bool_arr[num_molecules:]] = ref_vals[~variables_bool_arr][-num_params:]
+        A_func = func(wavelengths, mu_a, c_full, *params)
+
+        # will be zero at reference-idx wavelengths
+        res = A_func - A_func[:, [ref_idx]] - A - A[:, [ref_idx]]
+
+        return res.reshape(-1)
+
+    if left_bounds.shape != right_bounds.shape:
+        raise RuntimeError("Arrays for left and right bounds should have the same shape.")
+    if len(left_bounds) == num_vals and num_vars != num_vals:
+        print("Note: Bounds for parameters " + ", ".join(map(str, np.arange(num_vals)[~variables_bool_arr])) + " will be ignored, as they are not optimized.")
+        left_bounds = left_bounds[variables_bool_arr]
+        right_bounds = right_bounds[variables_bool_arr]
+    elif len(left_bounds) != num_vars:
+        raise RuntimeError("Invalid size for bounds.")
+
+    left_bounds = np.tile(left_bounds, num_spectra)
+    right_bounds = np.tile(right_bounds, num_spectra)
+
+    res = least_squares(
+        init_vals,
+        func_wrapper,
+        bounds=(left_bounds, right_bounds),
+        args=(A, ref_idx),
+        jac_sparsity=None,  ## TODO: This would have to be set to a sparse matrix
+        verbose=verbosity
+    )
+
+    return np.array(res.x).reshape(num_vars, num_spectra), np.array(res.cost).reshape(num_wavelengths, num_spectra)
+        
+
+
 def concentr_fit_nonlinear_concurrent(
     A,
     wavelengths,

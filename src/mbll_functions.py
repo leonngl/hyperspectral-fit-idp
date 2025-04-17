@@ -73,6 +73,14 @@ def A_jacques_blood_fraction(wavelengths, mu_a_matrix, c, a, b, m1, m2, m3):
     c_new = blood_fraction_to_concentrations(c)
     return A_jacques_new(wavelengths, mu_a_matrix, c_new, a, b, m1, m2, m3)
 
+
+def A_patterson(wavelengths, mu_a_matrix, c, a, b, n):
+    pass
+
+
+def A_carp(wavelengths, mu_a_matrix, c, a, b, n):
+    pass
+
 # the first and second row of c should contain f_blood and st02, respectively
 # keeps shape of input
 def blood_fraction_to_concentrations(c):

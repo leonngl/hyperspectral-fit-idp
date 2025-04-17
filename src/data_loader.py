@@ -16,6 +16,43 @@ class DataLoader():
     params_ref_blood_vessel = np.array([1.836, 0.488, 0, 0, 0.55, 0.01, 22.0, 0.660])
     params_ref_blood_vessel_fraction = mbll_functions.concentrations_to_blood_fraction(params_ref_blood_vessel)
 
+    gray_matter_parameters = np.array([0.0646, 0.0114, 0.0064, 0.0016, 0.73, 0.1, 40.8, 3.089])
+
+    tissue_parameters = {
+        "gray matter": [ # Digital instrument paper
+            np.array([0.0646, 0.0114, 0.0064, 0.0016, 0.73, 0.1]),
+            np.array([40.8, 3.089]),
+            0.85,
+            1.36
+        ],
+        "artery": [ # Digital instrument paper
+            np.array([2.27752, 0.4648, 0, 0, 0.55, 0.1]),
+            np.array([22.0, 0.660]),
+            0.935,
+            1.4
+        ],
+        "vein": [ # Digital instrument paper
+            np.array([1.3944, 0.9296, 0, 0, 0.55, 0.1]),
+            np.array([22.0, 0.660]),
+            0.935,
+            1.4
+        ],
+        "blood vessel average": [ 
+            np.array([1.836, 0.488, 0, 0, 0.55, 0.1]),
+            np.array([22.0, 0.660]),
+            0.935,
+            1.4
+        ],
+        "tumor": [
+            # white matter should have approx. half of the absorption of gray matter, and white matter has very similar absorption to gray matter
+            np.array([0.0646, 0.0114, 0.0064, 0.0016, 0.73, 0.1]) / 2,
+            np.array([33.6, 1.712]), # Jacques Overview
+            0.96, # Madsen
+            1.4 # typical refractive index of brain tissue, also used by Poulon et. al
+        ]
+    }
+
+
     
     def __init__(self, path, wavelength_left_cut, wavelength_right_cut):
         assert(wavelength_left_cut < wavelength_right_cut)
