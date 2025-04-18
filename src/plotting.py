@@ -37,11 +37,13 @@ def plot_spectra(spectra, wavelengths=None, labels=None, title=""):
     plt.title(title)
     plt.legend()
 
+
+# (molecules, wavelengths, spectra)
 def plot_spectra_slider(spectra, wavelengths=None, labels=None, title=""):
     _, num_spectra_idxs = spectra[0].shape
     num_spectra = len(spectra)
     spectra = np.stack(spectra)
-    idx = 500
+    idx = num_spectra_idxs // 2
     ymax = np.max(spectra[:, :, idx], axis=(0, 1)) 
     ymin = np.min(spectra[:, :, idx], axis=(0, 1))
     delta_y = 0.05*(ymax-ymin)/2

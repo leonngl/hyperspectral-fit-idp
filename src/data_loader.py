@@ -26,19 +26,19 @@ class DataLoader():
             1.36
         ],
         "artery": [ # Digital instrument paper
-            np.array([2.27752, 0.4648, 0, 0, 0.55, 0.1]),
+            np.array([2.27752, 0.4648, 0, 0, 0.55, 0.01]),
             np.array([22.0, 0.660]),
             0.935,
             1.4
         ],
         "vein": [ # Digital instrument paper
-            np.array([1.3944, 0.9296, 0, 0, 0.55, 0.1]),
+            np.array([1.3944, 0.9296, 0, 0, 0.55, 0.01]),
             np.array([22.0, 0.660]),
             0.935,
             1.4
         ],
         "blood vessel average": [ 
-            np.array([1.836, 0.488, 0, 0, 0.55, 0.1]),
+            np.array([1.836, 0.488, 0, 0, 0.55, 0.01]),
             np.array([22.0, 0.660]),
             0.935,
             1.4

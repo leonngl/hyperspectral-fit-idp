@@ -1,10 +1,7 @@
 import numpy as np
 import config
-
-def mbll_new(wavelengths, mu_a_matrix, c, pl):
-    pl = np.atleast_2d(pl).reshape(wavelengths.shape[0], -1)
-    c = np.atleast_2d(c).reshape(mu_a_matrix.shape[1], -1)
-    return (mu_a_matrix @ c) * pl
+from sympy import lambdify, symbols
+import pickle
 
 def delta_A_no_scattering(delta_c, mu_a_matrix):
     return mu_a_matrix @ delta_c
@@ -43,6 +40,20 @@ def delta_A_scattering_4(delta_A_no_scattering, wavelengths, a_t, b_t):
     return delta_A_scattering_1(delta_A_no_scattering, wavelengths, 0.0, 1.0, a_t, b_t)
 
 
+def reduced_scattering(wavelengths, a, b):
+    a = np.atleast_2d(a)
+    b = np.atleast_2d(b)
+    return a * (wavelengths/500)[:, None] ** (-b)
+
+def mbll_new(wavelengths, mu_a_matrix, c, a, b, baseline_attenuation, pathlength, scatterlength):
+    num_wavelengths, num_molecules = mu_a_matrix.shape
+    pathlength = np.atleast_2d(pathlength).reshape(num_wavelengths, -1)
+    c = np.atleast_2d(c).reshape(num_molecules, -1)
+    baseline_attenuation = np.atleast_2d(baseline_attenuation).reshape(num_wavelengths, -1)
+    mu_s_red = reduced_scattering(wavelengths, a, b)
+
+    return baseline_attenuation + (mu_a_matrix @ c) * pathlength + mu_s_red * scatterlength
+
 ###
 # the variable A becomes ambiguous in the jacques model, because jacques
 # defines its own A as A = m1 + m2*exp(ln(mu_a/mu_s)/m3)
@@ -73,13 +84,71 @@ def A_jacques_blood_fraction(wavelengths, mu_a_matrix, c, a, b, m1, m2, m3):
     c_new = blood_fraction_to_concentrations(c)
     return A_jacques_new(wavelengths, mu_a_matrix, c_new, a, b, m1, m2, m3)
 
+def A_carp(mu_a, mu_s, g, n):
+    f = g*g
+    g_star = g/(1+g)
+    mu_s_star = mu_s*(1-f)
+    mu_t_star = mu_a + mu_s_star
+    mu_tr = (mu_a + mu_s * (1-g))
+    mu_eff = np.sqrt(3 * mu_a * mu_tr)
+    h = 2/(3*mu_tr)
+    A = -0.13755 * np.power(n, 3) + 4.3390 * np.power(n, 2) - 4.90466 * n + 1.6896
+    alpha = 3*mu_s_star*(mu_t_star + g_star * mu_a) / (mu_eff**2 - mu_t_star**2)
+    beta = (-alpha * (1 + A*h*mu_t_star) - 3*A*h*g_star*mu_s_star) / (1 + A*h*mu_eff)
+    R = (alpha + beta) / (2 * A)
+    return -np.log(R)
 
-def A_patterson(wavelengths, mu_a_matrix, c, a, b, n):
-    pass
+def A_carp_concentrations(wavelengths, mu_a_matrix, c, a, b, g, n):
+    mu_a = mu_a_matrix @ c
+    mu_s_red = reduced_scattering(wavelengths, a, b)
+    return A_carp(mu_a, mu_s_red / (1-g), g, n)
 
 
-def A_carp(wavelengths, mu_a_matrix, c, a, b, n):
-    pass
+def A_carp_blood_fraction(wavelengths, mu_a_matrix, c, a, b, g, n):
+    c = blood_fraction_to_concentrations(c)
+    A_carp_concentrations(wavelengths, mu_a_matrix, c, a, b, g, n)
+
+
+# more rudimentary diffusion equation for planar source
+def A_patterson(mu_a, mu_s_red, n):
+    rd = -1.44 * np.power(n, -2) * 0.71 / n + 0.668 + 0.0636 * n
+    k = (1 + rd) / (1 - rd)
+    albedo = mu_s_red / (mu_a + mu_s_red)
+    R = albedo / (1 + 2 * k * (1-albedo) + (1 + 2*k/3)*np.sqrt(3*(1-albedo)))
+    return -np.log(R)
+
+def A_patterson_concentrations(wavelengths, mu_a_matrix, c, a, b, n):
+    mu_a = mu_a_matrix @ c
+    mu_s_red = reduced_scattering(wavelengths, a, b)
+    return A_patterson(mu_a, mu_s_red, n)
+
+
+def A_patterson_blood_fraction(wavelengths, mu_a_matrix, a, b, n):
+    c = blood_fraction_to_concentrations(c)
+    return A_patterson_concentrations(wavelengths, mu_a_matrix, c, a, b, n)
+
+try:
+    mu_a, mu_s_red, g = symbols("mu_a mu_s_red g", positive=True)
+    k = symbols("k")
+    with open(config.diffusion_derivative_dir / "carp.pickle", "rb") as f:
+        A_carp_diff_mu_a_symbolic, A_carp_diff_mu_s_symbolic = pickle.load(f)
+        A_carp_diff_mu_a_lambdified = lambdify((mu_a, mu_s_red, g, k), A_carp_diff_mu_a_symbolic)
+        A_carp_diff_mu_s_lambdified = lambdify((mu_a, mu_s_red, g, k), A_carp_diff_mu_s_symbolic)
+        
+        def A_carp_pathlength(wavelengths, mu_a_matrix, c, a, b, g, n):
+            mu_a = mu_a_matrix @ c
+            mu_s_red = reduced_scattering(wavelengths, a, b)
+            k = -0.13755 * (n**3) + 4.3390 * (n**2) - 4.90466 * n + 1.6896
+            return A_carp_diff_mu_a_lambdified(mu_a, mu_s_red, g, k)
+
+        def A_carp_scatterlength(wavelengths, mu_a_matrix, c, a, b, g, n):
+            mu_a = mu_a_matrix @ c
+            mu_s_red = reduced_scattering(wavelengths, a, b)
+            k = -0.13755 * (n**3) + 4.3390 * (n**2) - 4.90466 * n + 1.6896
+            return A_carp_diff_mu_s_lambdified(mu_a, mu_s_red, g, k)
+
+except FileNotFoundError:
+    print("Could load function data to define diffusion derivatives.")
 
 # the first and second row of c should contain f_blood and st02, respectively
 # keeps shape of input
