@@ -45,14 +45,15 @@ def reduced_scattering(wavelengths, a, b):
     b = np.atleast_2d(b)
     return a * (wavelengths/500)[:, None] ** (-b)
 
-def mbll_new(wavelengths, mu_a_matrix, c, a, b, baseline_attenuation, pathlength, scatterlength):
+def mbll_new(wavelengths, mu_a_matrix, c, a, b, baseline_attenuation, baseline_c, baseline_a, baseline_b, pathlength, scatterlength):
     num_wavelengths, num_molecules = mu_a_matrix.shape
     pathlength = np.atleast_2d(pathlength).reshape(num_wavelengths, -1)
     c = np.atleast_2d(c).reshape(num_molecules, -1)
+    baseline_c = np.atleast_2d(baseline_c).reshape(num_molecules, -1)
     baseline_attenuation = np.atleast_2d(baseline_attenuation).reshape(num_wavelengths, -1)
     mu_s_red = reduced_scattering(wavelengths, a, b)
-
-    return baseline_attenuation + (mu_a_matrix @ c) * pathlength + mu_s_red * scatterlength
+    baseline_mu_s_red = reduced_scattering(wavelengths, baseline_a, baseline_b)
+    return baseline_attenuation + (mu_a_matrix @ (c-baseline_c)) * pathlength + scatterlength * (mu_s_red - baseline_mu_s_red)
 
 ###
 # the variable A becomes ambiguous in the jacques model, because jacques
