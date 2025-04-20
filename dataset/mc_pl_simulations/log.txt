@@ -1,7 +1,7 @@
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -11,31 +11,31 @@
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4598 ms
-retrieving fields ... 	detected 9587356 photons, total: 9587356	transfer complete:	4897 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4911 ms
+kernel complete:  	35431 ms
+retrieving fields ... 	detected 9958096 photons, total: 9958096	transfer complete:	35522 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 35534 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2187.23 photon/ms
-total simulated energy: 10000000.00	absorbed: 99.63416%
+MCX simulation speed: 282.44 photon/ms
+total simulated energy: 10000000.00	absorbed: 83.46570%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -45,31 +45,31 @@ total simulated energy: 10000000.00	absorbed: 99.63416%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4532 ms
-retrieving fields ... 	detected 9580907 photons, total: 9580907	transfer complete:	4801 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4810 ms
+kernel complete:  	31735 ms
+retrieving fields ... 	detected 9955689 photons, total: 9955689	transfer complete:	31827 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 31837 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2218.77 photon/ms
-total simulated energy: 10000000.00	absorbed: 99.50976%
+MCX simulation speed: 315.35 photon/ms
+total simulated energy: 10000000.00	absorbed: 77.48989%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -79,31 +79,31 @@ total simulated energy: 10000000.00	absorbed: 99.50976%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4440 ms
-retrieving fields ... 	detected 9574308 photons, total: 9574308	transfer complete:	4717 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4726 ms
+kernel complete:  	31595 ms
+retrieving fields ... 	detected 9952773 photons, total: 9952773	transfer complete:	31691 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 31700 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2265.01 photon/ms
-total simulated energy: 10000000.00	absorbed: 99.71111%
+MCX simulation speed: 316.76 photon/ms
+total simulated energy: 10000000.00	absorbed: 74.04166%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -113,31 +113,31 @@ total simulated energy: 10000000.00	absorbed: 99.71111%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4451 ms
-retrieving fields ... 	detected 9567716 photons, total: 9567716	transfer complete:	4717 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4727 ms
+kernel complete:  	28404 ms
+retrieving fields ... 	detected 9949780 photons, total: 9949780	transfer complete:	28493 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 28504 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2258.87 photon/ms
-total simulated energy: 10000000.00	absorbed: 99.83603%
+MCX simulation speed: 352.36 photon/ms
+total simulated energy: 10000000.00	absorbed: 71.77992%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -147,31 +147,31 @@ total simulated energy: 10000000.00	absorbed: 99.83603%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4294 ms
-retrieving fields ... 	detected 9561005 photons, total: 9561005	transfer complete:	4520 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4530 ms
+kernel complete:  	25410 ms
+retrieving fields ... 	detected 9946706 photons, total: 9946706	transfer complete:	25498 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 25508 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2342.47 photon/ms
-total simulated energy: 10000000.00	absorbed: 99.86192%
+MCX simulation speed: 393.92 photon/ms
+total simulated energy: 10000000.00	absorbed: 71.33118%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -181,31 +181,31 @@ total simulated energy: 10000000.00	absorbed: 99.86192%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4293 ms
-retrieving fields ... 	detected 9554730 photons, total: 9554730	transfer complete:	4595 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4606 ms
+kernel complete:  	23087 ms
+retrieving fields ... 	detected 9943100 photons, total: 9943100	transfer complete:	23185 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 23196 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2343.02 photon/ms
-total simulated energy: 10000000.00	absorbed: 98.21492%
+MCX simulation speed: 433.65 photon/ms
+total simulated energy: 10000000.00	absorbed: 71.06370%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -215,31 +215,31 @@ total simulated energy: 10000000.00	absorbed: 98.21492%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4270 ms
-retrieving fields ... 	detected 9548106 photons, total: 9548106	transfer complete:	4544 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4555 ms
+kernel complete:  	22699 ms
+retrieving fields ... 	detected 9939853 photons, total: 9939853	transfer complete:	22788 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 22798 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2355.16 photon/ms
-total simulated energy: 10000000.00	absorbed: 91.53627%
+MCX simulation speed: 441.01 photon/ms
+total simulated energy: 10000000.00	absorbed: 72.01217%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -249,31 +249,31 @@ total simulated energy: 10000000.00	absorbed: 91.53627%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4168 ms
-retrieving fields ... 	detected 9542648 photons, total: 9542648	transfer complete:	4444 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4455 ms
+kernel complete:  	20689 ms
+retrieving fields ... 	detected 9936227 photons, total: 9936227	transfer complete:	20778 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 20789 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2414.88 photon/ms
-total simulated energy: 10000000.00	absorbed: 88.30127%
+MCX simulation speed: 483.93 photon/ms
+total simulated energy: 10000000.00	absorbed: 77.17960%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -283,65 +283,31 @@ total simulated energy: 10000000.00	absorbed: 88.30127%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
-initializing streams ...	init complete : 1 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
-simulation run# 1 ... 
-kernel complete:  	4163 ms
-retrieving fields ... 	detected 9537655 photons, total: 9537655	transfer complete:	4390 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4401 ms
-simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2418.96 photon/ms
-total simulated energy: 10000000.00	absorbed: 86.82419%
-(loss due to initial specular reflection is excluded in the total)
-###############################################################################
-#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
-#                                                                             #
-# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
-#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
-###############################################################################
-#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
-###############################################################################
-#  Open-source codes and reusable scientific data are essential for research, #
-# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
-#                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
-# and consider sharing your public datasets in standardized JSON/JData format #
-###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
-###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
-- compiled with: RNG [xorshift128+] with Seed Length [4]
-
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4207 ms
-retrieving fields ... 	detected 9531656 photons, total: 9531656	transfer complete:	4463 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4474 ms
+kernel complete:  	19740 ms
+retrieving fields ... 	detected 9932156 photons, total: 9932156	transfer complete:	19831 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 19840 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2391.77 photon/ms
-total simulated energy: 10000000.00	absorbed: 84.53928%
+MCX simulation speed: 507.20 photon/ms
+total simulated energy: 10000000.00	absorbed: 83.58546%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -351,31 +317,31 @@ total simulated energy: 10000000.00	absorbed: 84.53928%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4148 ms
-retrieving fields ... 	detected 9526889 photons, total: 9526889	transfer complete:	4375 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4386 ms
+kernel complete:  	17397 ms
+retrieving fields ... 	detected 9928394 photons, total: 9928394	transfer complete:	17487 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 17496 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2424.83 photon/ms
-total simulated energy: 10000000.00	absorbed: 84.19869%
+MCX simulation speed: 575.61 photon/ms
+total simulated energy: 10000000.00	absorbed: 87.25015%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -385,31 +351,31 @@ total simulated energy: 10000000.00	absorbed: 84.19869%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4034 ms
-retrieving fields ... 	detected 9520092 photons, total: 9520092	transfer complete:	4268 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4277 ms
+kernel complete:  	16444 ms
+retrieving fields ... 	detected 9924328 photons, total: 9924328	transfer complete:	16546 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 16557 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2494.39 photon/ms
-total simulated energy: 10000000.00	absorbed: 86.42383%
+MCX simulation speed: 609.01 photon/ms
+total simulated energy: 10000000.00	absorbed: 86.19844%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -419,31 +385,31 @@ total simulated energy: 10000000.00	absorbed: 86.42383%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4000 ms
-retrieving fields ... 	detected 9515853 photons, total: 9515853	transfer complete:	4221 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4230 ms
+kernel complete:  	15491 ms
+retrieving fields ... 	detected 9920069 photons, total: 9920069	transfer complete:	15583 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 15594 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2518.89 photon/ms
-total simulated energy: 10000000.00	absorbed: 86.96143%
+MCX simulation speed: 646.54 photon/ms
+total simulated energy: 10000000.00	absorbed: 84.36798%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -453,31 +419,31 @@ total simulated energy: 10000000.00	absorbed: 86.96143%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	3926 ms
-retrieving fields ... 	detected 9509805 photons, total: 9509805	transfer complete:	4226 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4236 ms
+kernel complete:  	14709 ms
+retrieving fields ... 	detected 9915698 photons, total: 9915698	transfer complete:	14797 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 14808 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2564.10 photon/ms
-total simulated energy: 10000000.00	absorbed: 87.47795%
+MCX simulation speed: 681.01 photon/ms
+total simulated energy: 10000000.00	absorbed: 87.34590%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -487,65 +453,31 @@ total simulated energy: 10000000.00	absorbed: 87.47795%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
-initializing streams ...	init complete : 1 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
-simulation run# 1 ... 
-kernel complete:  	3879 ms
-retrieving fields ... 	detected 9505383 photons, total: 9505383	transfer complete:	4165 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4182 ms
-simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2594.71 photon/ms
-total simulated energy: 10000000.00	absorbed: 89.16528%
-(loss due to initial specular reflection is excluded in the total)
-###############################################################################
-#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
-#                                                                             #
-# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
-#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
-###############################################################################
-#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
-###############################################################################
-#  Open-source codes and reusable scientific data are essential for research, #
-# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
-#                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
-# and consider sharing your public datasets in standardized JSON/JData format #
-###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
-###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
-- compiled with: RNG [xorshift128+] with Seed Length [4]
-
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	3860 ms
-retrieving fields ... 	detected 9500447 photons, total: 9500447	transfer complete:	4111 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4123 ms
+kernel complete:  	13168 ms
+retrieving fields ... 	detected 9911088 photons, total: 9911088	transfer complete:	13268 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 13279 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2607.56 photon/ms
-total simulated energy: 10000000.00	absorbed: 90.37329%
+MCX simulation speed: 760.80 photon/ms
+total simulated energy: 10000000.00	absorbed: 88.66954%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -555,31 +487,31 @@ total simulated energy: 10000000.00	absorbed: 90.37329%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	3870 ms
-retrieving fields ... 	detected 9496013 photons, total: 9496013	transfer complete:	4072 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4083 ms
+kernel complete:  	12434 ms
+retrieving fields ... 	detected 9906354 photons, total: 9906354	transfer complete:	12536 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 12547 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2601.46 photon/ms
-total simulated energy: 10000000.00	absorbed: 91.26186%
+MCX simulation speed: 805.80 photon/ms
+total simulated energy: 10000000.00	absorbed: 77.09596%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -589,31 +521,31 @@ total simulated energy: 10000000.00	absorbed: 91.26186%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	3851 ms
-retrieving fields ... 	detected 9490933 photons, total: 9490933	transfer complete:	4102 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4111 ms
+kernel complete:  	12053 ms
+retrieving fields ... 	detected 9901403 photons, total: 9901403	transfer complete:	12153 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 12162 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2614.38 photon/ms
-total simulated energy: 10000000.00	absorbed: 91.87613%
+MCX simulation speed: 831.46 photon/ms
+total simulated energy: 10000000.00	absorbed: 63.61517%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -623,31 +555,31 @@ total simulated energy: 10000000.00	absorbed: 91.87613%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	3801 ms
-retrieving fields ... 	detected 9486216 photons, total: 9486216	transfer complete:	4027 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4039 ms
+kernel complete:  	11275 ms
+retrieving fields ... 	detected 9896227 photons, total: 9896227	transfer complete:	11368 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 11379 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2649.71 photon/ms
-total simulated energy: 10000000.00	absorbed: 92.13862%
+MCX simulation speed: 888.81 photon/ms
+total simulated energy: 10000000.00	absorbed: 56.99164%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -657,31 +589,31 @@ total simulated energy: 10000000.00	absorbed: 92.13862%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	3723 ms
-retrieving fields ... 	detected 9482128 photons, total: 9482128	transfer complete:	3970 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 3979 ms
+kernel complete:  	10866 ms
+retrieving fields ... 	detected 9890904 photons, total: 9890904	transfer complete:	10965 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 10976 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2705.63 photon/ms
-total simulated energy: 10000000.00	absorbed: 92.09506%
+MCX simulation speed: 922.34 photon/ms
+total simulated energy: 10000000.00	absorbed: 49.94779%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -691,31 +623,31 @@ total simulated energy: 10000000.00	absorbed: 92.09506%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	3737 ms
-retrieving fields ... 	detected 9477537 photons, total: 9477537	transfer complete:	3993 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 4003 ms
+kernel complete:  	9853 ms
+retrieving fields ... 	detected 9885279 photons, total: 9885279	transfer complete:	9940 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 9949 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2694.69 photon/ms
-total simulated energy: 10000000.00	absorbed: 91.65267%
+MCX simulation speed: 1017.40 photon/ms
+total simulated energy: 10000000.00	absorbed: 45.64648%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2024 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io/                 #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
 #                                                                             #
 # Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
 #   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
@@ -725,24 +657,1078 @@ total simulated energy: 10000000.00	absorbed: 91.65267%
 #  Open-source codes and reusable scientific data are essential for research, #
 # MCX proudly developed human-readable JSON-based data formats for easy reuse.#
 #                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io/#
+#Please visit our free scientific data sharing portal at https://neurojson.io #
 # and consider sharing your public datasets in standardized JSON/JData format #
 ###############################################################################
-$Rev::d03375$v2024.6 $Date::2024-11-21 01:51:31 -05$ by $Author::Qianqian Fang$
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
 ###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Nov 21 2024]
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
 - compiled with: RNG [xorshift128+] with Seed Length [4]
 
-GPU=6 (Quadro RTX 6000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
 initializing streams ...	init complete : 0 ms
-requesting 1536 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 1.00e+01ns] ...
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	3652 ms
-retrieving fields ... 	detected 9473437 photons, total: 9473437	transfer complete:	3847 ms
-normalizing raw data ...	source 1, normalization factor alpha=10.000000
-data normalization complete : 3857 ms
+kernel complete:  	9349 ms
+retrieving fields ... 	detected 9879807 photons, total: 9879807	transfer complete:	9432 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 9441 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 1072.39 photon/ms
+total simulated energy: 10000000.00	absorbed: 43.34003%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	8969 ms
+retrieving fields ... 	detected 9873466 photons, total: 9873466	transfer complete:	9060 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 9071 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 1118.07 photon/ms
+total simulated energy: 10000000.00	absorbed: 42.15538%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	8851 ms
+retrieving fields ... 	detected 9868074 photons, total: 9868074	transfer complete:	8939 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 8949 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 1132.89 photon/ms
+total simulated energy: 10000000.00	absorbed: 41.12543%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	8421 ms
+retrieving fields ... 	detected 9861737 photons, total: 9861737	transfer complete:	8509 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 8518 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 1190.90 photon/ms
+total simulated energy: 10000000.00	absorbed: 39.83915%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	7949 ms
+retrieving fields ... 	detected 9855350 photons, total: 9855350	transfer complete:	8039 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 8048 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 1261.83 photon/ms
+total simulated energy: 10000000.00	absorbed: 38.47095%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	7714 ms
+retrieving fields ... 	detected 9848602 photons, total: 9848602	transfer complete:	7804 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 7813 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 1300.56 photon/ms
+total simulated energy: 10000000.00	absorbed: 37.54127%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	7479 ms
+retrieving fields ... 	detected 9841691 photons, total: 9841691	transfer complete:	7569 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 7578 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 1341.38 photon/ms
+total simulated energy: 10000000.00	absorbed: 37.29707%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	7172 ms
+retrieving fields ... 	detected 9834941 photons, total: 9834941	transfer complete:	7263 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 7272 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 1399.19 photon/ms
+total simulated energy: 10000000.00	absorbed: 37.55254%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	7026 ms
+retrieving fields ... 	detected 9828129 photons, total: 9828129	transfer complete:	7146 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 7155 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 1428.16 photon/ms
+total simulated energy: 10000000.00	absorbed: 38.34094%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	6829 ms
+retrieving fields ... 	detected 9820396 photons, total: 9820396	transfer complete:	6921 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 6930 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 1469.72 photon/ms
+total simulated energy: 10000000.00	absorbed: 39.57459%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	6233 ms
+retrieving fields ... 	detected 9812628 photons, total: 9812628	transfer complete:	6325 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 6336 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 1611.34 photon/ms
+total simulated energy: 10000000.00	absorbed: 41.63808%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	6016 ms
+retrieving fields ... 	detected 9805169 photons, total: 9805169	transfer complete:	6102 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 6111 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 1668.89 photon/ms
+total simulated energy: 10000000.00	absorbed: 43.82539%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	5659 ms
+retrieving fields ... 	detected 9797167 photons, total: 9797167	transfer complete:	5740 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 5750 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 1774.62 photon/ms
+total simulated energy: 10000000.00	absorbed: 45.62922%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	5414 ms
+retrieving fields ... 	detected 9788947 photons, total: 9788947	transfer complete:	5509 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 5519 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 1855.29 photon/ms
+total simulated energy: 10000000.00	absorbed: 46.49688%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	5289 ms
+retrieving fields ... 	detected 9780326 photons, total: 9780326	transfer complete:	5378 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 5387 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 1899.34 photon/ms
+total simulated energy: 10000000.00	absorbed: 47.29118%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	5167 ms
+retrieving fields ... 	detected 9771690 photons, total: 9771690	transfer complete:	5266 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 5275 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 1944.39 photon/ms
+total simulated energy: 10000000.00	absorbed: 47.98058%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	4935 ms
+retrieving fields ... 	detected 9763584 photons, total: 9763584	transfer complete:	5044 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 5054 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 2036.25 photon/ms
+total simulated energy: 10000000.00	absorbed: 48.95617%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	4796 ms
+retrieving fields ... 	detected 9753689 photons, total: 9753689	transfer complete:	4896 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 4905 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 2096.00 photon/ms
+total simulated energy: 10000000.00	absorbed: 50.02756%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	4536 ms
+retrieving fields ... 	detected 9745129 photons, total: 9745129	transfer complete:	4635 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 4644 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 2217.29 photon/ms
+total simulated energy: 10000000.00	absorbed: 51.25183%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	4431 ms
+retrieving fields ... 	detected 9735100 photons, total: 9735100	transfer complete:	4530 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 4541 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 2269.63 photon/ms
+total simulated energy: 10000000.00	absorbed: 52.88754%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	4279 ms
+retrieving fields ... 	detected 9724937 photons, total: 9724937	transfer complete:	4379 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 4388 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 2350.18 photon/ms
+total simulated energy: 10000000.00	absorbed: 54.26675%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	4171 ms
+retrieving fields ... 	detected 9715627 photons, total: 9715627	transfer complete:	4260 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 4269 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 2411.96 photon/ms
+total simulated energy: 10000000.00	absorbed: 55.27180%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	3982 ms
+retrieving fields ... 	detected 9704800 photons, total: 9704800	transfer complete:	4071 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 4080 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 2526.53 photon/ms
+total simulated energy: 10000000.00	absorbed: 56.16255%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	3922 ms
+retrieving fields ... 	detected 9694419 photons, total: 9694419	transfer complete:	4004 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 4013 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 2565.42 photon/ms
+total simulated energy: 10000000.00	absorbed: 57.15553%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	3767 ms
+retrieving fields ... 	detected 9684049 photons, total: 9684049	transfer complete:	3851 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 3860 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 2671.65 photon/ms
+total simulated energy: 10000000.00	absorbed: 58.13168%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	3651 ms
+retrieving fields ... 	detected 9672977 photons, total: 9672977	transfer complete:	3736 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 3745 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
 MCX simulation speed: 2757.10 photon/ms
-total simulated energy: 10000000.00	absorbed: 90.73958%
+total simulated energy: 10000000.00	absorbed: 59.22144%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	3552 ms
+retrieving fields ... 	detected 9662420 photons, total: 9662420	transfer complete:	3641 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 3650 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 2834.47 photon/ms
+total simulated energy: 10000000.00	absorbed: 60.20861%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	3463 ms
+retrieving fields ... 	detected 9651414 photons, total: 9651414	transfer complete:	3551 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 3560 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 2911.21 photon/ms
+total simulated energy: 10000000.00	absorbed: 61.24988%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	3341 ms
+retrieving fields ... 	detected 9639733 photons, total: 9639733	transfer complete:	3428 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 3437 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 3016.59 photon/ms
+total simulated energy: 10000000.00	absorbed: 62.60226%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	3312 ms
+retrieving fields ... 	detected 9627733 photons, total: 9627733	transfer complete:	3401 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 3412 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 3045.99 photon/ms
+total simulated energy: 10000000.00	absorbed: 64.56567%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	3167 ms
+retrieving fields ... 	detected 9615300 photons, total: 9615300	transfer complete:	3257 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 3266 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 3181.67 photon/ms
+total simulated energy: 10000000.00	absorbed: 66.91253%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 0 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	3064 ms
+retrieving fields ... 	detected 9602841 photons, total: 9602841	transfer complete:	3160 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 3169 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 3289.47 photon/ms
+total simulated energy: 10000000.00	absorbed: 70.22843%
 (loss due to initial specular reflection is excluded in the total)
