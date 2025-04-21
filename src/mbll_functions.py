@@ -47,10 +47,11 @@ def reduced_scattering(wavelengths, a, b):
 
 def mbll_new(wavelengths, mu_a_matrix, c, a, b, baseline_attenuation, baseline_c, baseline_a, baseline_b, pathlength, scatterlength):
     num_wavelengths, num_molecules = mu_a_matrix.shape
-    pathlength = np.atleast_2d(pathlength).reshape(num_wavelengths, -1)
+    pathlength = np.atleast_2d(pathlength).reshape(num_wavelengths, 1)
+    scatterlength = np.atleast_2d(scatterlength).reshape(num_wavelengths, 1)
     c = np.atleast_2d(c).reshape(num_molecules, -1)
-    baseline_c = np.atleast_2d(baseline_c).reshape(num_molecules, -1)
-    baseline_attenuation = np.atleast_2d(baseline_attenuation).reshape(num_wavelengths, -1)
+    baseline_c = np.atleast_2d(baseline_c).reshape(num_molecules, 1)
+    baseline_attenuation = np.atleast_2d(baseline_attenuation).reshape(num_wavelengths, 1)
     mu_s_red = reduced_scattering(wavelengths, a, b)
     baseline_mu_s_red = reduced_scattering(wavelengths, baseline_a, baseline_b)
     return baseline_attenuation + (mu_a_matrix @ (c-baseline_c)) * pathlength + scatterlength * (mu_s_red - baseline_mu_s_red)
@@ -68,7 +69,7 @@ def A_jacques(mu_a_matrix, c, wavelengths, a, b, m1, m2, m3):
     return A_j * mu_a * theta
 
 
-def A_jacques_new(wavelengths, mu_a_matrix, c, a, b, m1, m2, m3):
+def A_jacques_concentrations(wavelengths, mu_a_matrix, c, a, b, m1, m2, m3):
     a = np.atleast_2d(a)
     b = np.atleast_2d(b)
     c = np.atleast_2d(c).reshape(mu_a_matrix.shape[1], -1)
@@ -83,7 +84,7 @@ def A_jacques_new(wavelengths, mu_a_matrix, c, a, b, m1, m2, m3):
 # f_blood, stO2, c_oxCCO, c_redCCO, f_water, f_fat
 def A_jacques_blood_fraction(wavelengths, mu_a_matrix, c, a, b, m1, m2, m3):
     c_new = blood_fraction_to_concentrations(c)
-    return A_jacques_new(wavelengths, mu_a_matrix, c_new, a, b, m1, m2, m3)
+    return A_jacques_concentrations(wavelengths, mu_a_matrix, c_new, a, b, m1, m2, m3)
 
 def A_carp(mu_a, mu_s, g, n):
     f = g*g
@@ -100,6 +101,9 @@ def A_carp(mu_a, mu_s, g, n):
     return -np.log(R)
 
 def A_carp_concentrations(wavelengths, mu_a_matrix, c, a, b, g, n):
+    a = np.atleast_2d(a)
+    b = np.atleast_2d(b)
+    c = np.atleast_2d(c).reshape(mu_a_matrix.shape[1], -1)
     mu_a = mu_a_matrix @ c
     mu_s_red = reduced_scattering(wavelengths, a, b)
     return A_carp(mu_a, mu_s_red / (1-g), g, n)
@@ -119,6 +123,11 @@ def A_patterson(mu_a, mu_s_red, n):
     return -np.log(R)
 
 def A_patterson_concentrations(wavelengths, mu_a_matrix, c, a, b, n):
+    a = np.atleast_2d(a)
+    b = np.atleast_2d(b)
+    c = np.atleast_2d(c).reshape(mu_a_matrix.shape[1], -1)
+    mu_a = mu_a_matrix @ c
+    mu_s_red = reduced_scattering(wavelengths, a, b)
     mu_a = mu_a_matrix @ c
     mu_s_red = reduced_scattering(wavelengths, a, b)
     return A_patterson(mu_a, mu_s_red, n)

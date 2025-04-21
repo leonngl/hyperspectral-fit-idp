@@ -26,7 +26,7 @@ class DataLoader():
             1.36
         ],
         "artery": [ # Digital instrument paper
-            np.array([2.27752, 0.4648, 0, 0, 0.55, 0.01]),
+            np.array([2.279, 0.0465, 0, 0, 0.55, 0.01]),
             np.array([22.0, 0.660]),
             0.935,
             1.4

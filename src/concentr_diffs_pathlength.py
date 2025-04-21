@@ -16,6 +16,99 @@ def concentr_fit_mbll(A, wavelengths, mu_a_matrix, pathlengths):
     return mu_a_matrix_pinv  @ (A / pathlengths)
 
 
+def concentr_fit_mbll_new(
+    A, 
+    wavelengths,
+    mu_a_matrix,
+    pathlength,
+    scatterlength,
+    baseline_attenuation,
+    baseline_concentrations,
+    baseline_a,
+    baseline_b
+): 
+    pass
+
+
+def concentr_fit_mbll_delta(
+    delta_A,
+    wavelengths,
+    mu_a_matrix,
+    pathlength,
+    scatterlength
+):
+    pass
+    
+
+class A_mbll_fit_delta():
+
+    def __init__(
+        self,
+        wavelengths,
+        mu_a_matrix,
+        pathlength,
+        scatterlength,
+        baseline_b
+    ):
+        num_wavelengths = len(wavelengths)
+        pathlength = np.atleast_2d(pathlength).reshape(num_wavelengths, 1)
+        scatterlength = np.atleast_2d(scatterlength).reshape(num_wavelengths, 1)
+        self.pseudoinverse = pinv(
+            np.column_stack(
+                (
+                    pathlength * mu_a_matrix,
+                    scatterlength * np.power(wavelengths / 500, -baseline_b)
+                )
+            )
+        )
+    
+
+    def delta_concentr_fit(self, delta_A):
+        return self.pseudoinverse @ delta_A
+    
+
+class A_mbll_fit():
+
+    def __init__(
+        self,
+        wavelengths,
+        mu_a_matrix,
+        tissue_types,
+        # these paramters have as first dimension tissue type
+        pathlength,
+        scatterlength,
+        baseline_attenuation,
+        baseline_concentrations,
+        baseline_a,
+        baseline_b
+    ):
+        self.tissue_types = tissue_types
+        num_wavelengths = len(wavelengths)
+        self.pseudoinverse = dict()
+        self.offset = dict()
+
+        for i, tissue_type in enumerate(tissue_type):
+            cur_pl = np.atleast_2d(pathlength[i]).reshape(num_wavelengths, 1)
+            cur_sl = np.atleast_2d(scatterlength[i]).reshape(num_wavelengths, 1)
+            self.pseudoinverse[tissue_type] = pinv(
+                np.column_stack(
+                    (
+                        cur_pl * mu_a_matrix,
+                        cur_sl * np.power(wavelengths / 500, -baseline_b[i])
+                    )
+                )
+            )
+
+            self.offset[tissue_type] = baseline_attenuation[i]
+            self.offset[tissue_type] -= (cur_pl * mu_a_matrix) @ baseline_concentrations[i]
+            self.offset[tissue_type] -= (cur_sl * np.power(wavelengths / 500, -baseline_b[i])) * baseline_a[i]
+
+
+    def concentr_fit(self, A, tissue_type):
+        return self.pseudoinverse[tissue_type] @ (A - self.offset[tissue_type])
+        
+
+
 
 ### input
 # mu_a
@@ -214,7 +307,15 @@ def concentr_fit_nonlinear(
         params = x[num_molecules:]
         # don't forget to add minus to jacobian!
         jacobian_val = -jacobian(wavelengths, mu_a, c, *params)  
-        return jacobian_val[:, 0, :]  
+        return jacobian_val[:, 0, :]
+
+
+    if ref_vals is None:
+        if is_delta_A or num_vars != num_vals:
+            raise RuntimeError("Reference Values missing.")
+        else:
+            ref_vals = [None] * num_vals
+    
     
     A_ref = None
     if is_delta_A:
