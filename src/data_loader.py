@@ -151,6 +151,17 @@ class DataLoader():
     @staticmethod
     def mu_s_red_func_blood_vessel(wl):
         return DataLoader.params_ref_blood_vessel[-2] * np.power((wl/500), -DataLoader.params_ref_blood_vessel[-1])
+    
+
+    @staticmethod
+    def mu_a_func_tissue(wl, tissue):
+        mu_a_matrix = DataLoader.absorption_coefs(wl, use_diff_oxycco=False, use_water_and_fat=True)
+        return mu_a_matrix @ DataLoader.tissue_parameters[tissue][0]
+    
+    @staticmethod
+    def mu_s_red_func_tissue(wl, tissue):
+        a, b = DataLoader.tissue_parameters[tissue][1]
+        return a * np.power(wl/500, -b)
        
 
 class DataLoaderNIRS(DataLoader):
@@ -242,7 +253,7 @@ class DataLoaderHELICOID(DataLoader):
         self.reflectance = (raw_data - dark_reference) / (white_reference - dark_reference)
         self.reflectance = np.transpose(self.reflectance, (2, 0, 1)) # move wavelength axis to front
         self.reflectance = self.reflectance[self.wavelength_idxs, ...] # choose desired wavelengths
-        self.reflectance[self.reflectance <= 0] = 1e-5 #prevent 0 value in log
+        self.reflectance[self.reflectance <= 0] = 1e-9 #prevent 0 value in log
 
         self.patient_id = patient_id
 
@@ -258,6 +269,9 @@ class DataLoaderHELICOID(DataLoader):
     def get_attenuation_change(self, patient_id, reference_label="normal", use_average_reference=False):
         if not self.patient_id == patient_id:
             self.load_data(patient_id)
+        
+        if reference_label == "gray matter":
+            reference_label = "normal"
 
         labels = ["unlabeled", "normal", "tumor", "blood", "background"]
         label_num = 0
@@ -267,6 +281,8 @@ class DataLoaderHELICOID(DataLoader):
         label_idxs = np.nonzero(self.label_map == label_num) # returns two lists
         pixel_idx = len(label_idxs[0]) // 3
         self.reference_pixel = np.array([label_idxs[0][pixel_idx], label_idxs[1][pixel_idx]])
+        # reference pixel as index in all tissue pixels 
+        self.reference_pixel_tissue_ctr = pixel_idx
         
         self.reference_reflectance = self.reflectance[:, self.reference_pixel[0], self.reference_pixel[1]]
 
