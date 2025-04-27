@@ -5,7 +5,11 @@ import os
 
 # return score and config of best result
 def get_best_values_from_res_grid(res_grid, metric="sq_avg_error"):
-    best_result = res_grid.get_best_result(scope="avg")
+    try:
+        best_result = res_grid.get_best_result(scope="avg")
+    except Exception:
+        print("Could not get best_result from res_grid!")
+        return np.inf, None
     best_config = best_result.config
     config_arr = np.array([best_config[str(i)] for i in range(len(best_config))])
     score = best_result.metrics_dataframe[metric].mean()

@@ -37,7 +37,8 @@ class DataLoader():
             0.935,
             1.4
         ],
-        "blood vessel average": [ 
+        # average values of artery and vein, used if vessel type is unkown
+        "blood vessel": [ 
             np.array([1.836, 0.488, 0, 0, 0.55, 0.01]),
             np.array([22.0, 0.660]),
             0.935,
@@ -279,7 +280,8 @@ class DataLoaderHELICOID(DataLoader):
             label_num += 1
         
         label_idxs = np.nonzero(self.label_map == label_num) # returns two lists
-        pixel_idx = len(label_idxs[0]) // 3
+        #pixel_idx = len(label_idxs[0]) // 20
+        pixel_idx = 50
         self.reference_pixel = np.array([label_idxs[0][pixel_idx], label_idxs[1][pixel_idx]])
         # reference pixel as index in all tissue pixels 
         self.reference_pixel_tissue_ctr = pixel_idx

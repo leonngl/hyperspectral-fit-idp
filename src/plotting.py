@@ -22,6 +22,28 @@ def plot_concentrations(concentr_diffs, title="", custom_labels=None, Hb_idxs=(0
     plt.title(title)
     plt.legend()
 
+#(tissue, model, params)
+def plot_concentrations_bar(concentrations, tissue_labels, model_labels, param_labels, water_scale_factor=(1/100)):
+
+    concentrations[:, :, -2:] *= water_scale_factor
+    
+    num_tissues, num_models, num_params = np.array(concentrations).shape
+    for tissue_idx in range(num_tissues):
+        x = np.arange(num_models)
+        fig, ax = plt.subplots(layout="constrained")
+        multiplier = 0
+        width = 0.125
+        for param_idx in range(num_params):
+            offset = width * multiplier
+            rects = ax.bar(x + offset, concentrations[tissue_idx, :, param_idx], width, label=param_labels[param_idx])
+            #ax.bar_label(rects, padding=3)
+            multiplier += 1
+        
+        ax.set_ylabel("Concentration (mM)")
+        ax.set_xticks(x + width, model_labels)
+        ax.legend()
+        ax.set_title(tissue_labels[tissue_idx])
+
 def plot_spectrum(spectrum, wavelengths=None, label="", title=""):
     plt.figure()
     plt.plot(wavelengths, spectrum, label=label)
