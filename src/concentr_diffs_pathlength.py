@@ -2,6 +2,7 @@ from mbll_functions import *
 from tqdm.notebook import tqdm, tqdm_notebook
 from scipy.optimize import least_squares, minimize, Bounds, LinearConstraint, SR1
 from ray import tune, train
+import ray
 import numpy as np
 from scipy.linalg import pinv
 import math

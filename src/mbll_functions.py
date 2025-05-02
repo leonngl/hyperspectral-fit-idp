@@ -77,7 +77,7 @@ def A_jacques_concentrations(wavelengths, mu_a_matrix, c, a, b, m1, m2, m3):
 
     mu_a = mu_a_matrix @ c
     mu_s_red = a * (wavelengths/500)[:, None] ** (-b)
-    A_j = m1 + m2 + np.exp(np.log(mu_s_red/mu_a)/m3)
+    A_j = m1 + m2*np.exp(np.log(mu_s_red/mu_a)/m3)
     theta = 1 / np.sqrt(3*mu_a*(mu_a + mu_s_red))
     return A_j * mu_a * theta
 
@@ -142,9 +142,9 @@ try:
     mu_a, mu_s_red, g = symbols("mu_a mu_s_red g", positive=True)
     k = symbols("k")
     with open(config.diffusion_derivative_dir / "carp.pickle", "rb") as f:
-        A_carp_diff_mu_a_symbolic, A_carp_diff_mu_s_symbolic = pickle.load(f)
+        A_carp_diff_mu_a_symbolic, A_carp_diff_mu_s_red_symbolic = pickle.load(f)
         A_carp_diff_mu_a_lambdified = lambdify((mu_a, mu_s_red, g, k), A_carp_diff_mu_a_symbolic)
-        A_carp_diff_mu_s_red_lambdified = lambdify((mu_a, mu_s_red, g, k), A_carp_diff_mu_s_symbolic)
+        A_carp_diff_mu_s_red_lambdified = lambdify((mu_a, mu_s_red, g, k), A_carp_diff_mu_s_red_symbolic)
         
         def A_carp_pathlength(wavelengths, mu_a_matrix, c, a, b, g, n):
             mu_a = mu_a_matrix @ c
@@ -160,6 +160,27 @@ try:
 
 except FileNotFoundError:
     print("Could load function data to define diffusion derivatives.")
+
+try:
+    mu_a, mu_s_red, g = symbols("mu_a mu_s_red g", positive=True)
+    m1, m2, m3 = symbols("m1 m2 m3")
+    with open(config.diffusion_derivative_dir / "jacques.pickle", "rb") as f:
+        A_jacques_diff_mu_a_symbolic, A_jacques_diff_mu_s_red_symbolic = pickle.load(f)
+        A_jacques_diff_mu_a_lambdified = lambdify((mu_a, mu_s_red, m1, m2, m3), A_jacques_diff_mu_a_symbolic)
+        A_jacques_diff_mu_s_red_lambdified = lambdify((mu_a, mu_s_red, m1, m2, m3), A_jacques_diff_mu_s_red_symbolic)
+
+        def A_jacques_pathlength(wavelengths, mu_a_matrix, c, a, b, m1, m2, m3):
+            mu_a = mu_a_matrix @ c
+            mu_s_red = reduced_scattering(wavelengths, a, b)
+            return A_jacques_diff_mu_a_lambdified(mu_a[..., None], mu_s_red, m1, m2, m3)
+
+        def A_jacques_scatterlength(wavelengths, mu_a_matrix, c, a, b, m1, m2, m3, g):
+            mu_a = mu_a_matrix @ c
+            mu_s_red = reduced_scattering(wavelengths, a, b)
+            return A_jacques_diff_mu_s_red_lambdified(mu_a[..., None], mu_s_red, m1, m2, m3) * (1-g)
+
+except FileNotFoundError:
+    print("Could load function data to define jacques derivatives.")
 
 # the first and second row of c should contain f_blood and st02, respectively
 # keeps shape of input
