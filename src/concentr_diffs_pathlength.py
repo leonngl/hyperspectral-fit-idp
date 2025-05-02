@@ -585,7 +585,7 @@ def concentr_fit_nonlinear_reference_param_search_multiple_tissues(
                 verbosity=0
             )
 
-            train.report({"sq_avg_error": np.sum(errors[:, t:t+spectra_per_report]**2) / num_wavelengths / (min(t + spectra_per_report, num_spectra) - t)})
+            tune.report({"sq_avg_error": np.sum(errors[:, t:t+spectra_per_report]**2) / num_wavelengths / (min(t + spectra_per_report, num_spectra) - t)})
     
 
     grace_reports = math.ceil(grace_spectra / spectra_per_report)
@@ -606,6 +606,14 @@ def concentr_fit_nonlinear_reference_param_search_multiple_tissues(
             time_budget_s=time_budget_s,
             max_concurrent_trials=min(max_concurrent_trials, multiprocessing.cpu_count())
         )
+    )
+
+    ray.init(
+        _system_config={
+            # Allow spilling until the local disk is 98% utilized.
+            # This only affects spilling to the local file system.
+            "local_fs_capacity_threshold": 0.98,
+        },
     )
 
     res = tuner.fit()
