@@ -24,13 +24,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	35431 ms
-retrieving fields ... 	detected 9958096 photons, total: 9958096	transfer complete:	35522 ms
+kernel complete:  	25589 ms
+retrieving fields ... 	detected 9895963 photons, total: 9895963	transfer complete:	25681 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 35534 ms
+data normalization complete : 25693 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 282.44 photon/ms
-total simulated energy: 10000000.00	absorbed: 83.46570%
+MCX simulation speed: 391.18 photon/ms
+total simulated energy: 10000000.00	absorbed: 99.87392%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -58,13 +58,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	31735 ms
-retrieving fields ... 	detected 9955689 photons, total: 9955689	transfer complete:	31827 ms
+kernel complete:  	25588 ms
+retrieving fields ... 	detected 9894597 photons, total: 9894597	transfer complete:	25683 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 31837 ms
+data normalization complete : 25694 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 315.35 photon/ms
-total simulated energy: 10000000.00	absorbed: 77.48989%
+MCX simulation speed: 391.18 photon/ms
+total simulated energy: 10000000.00	absorbed: 99.76790%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -92,13 +92,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	31595 ms
-retrieving fields ... 	detected 9952773 photons, total: 9952773	transfer complete:	31691 ms
+kernel complete:  	24640 ms
+retrieving fields ... 	detected 9892929 photons, total: 9892929	transfer complete:	24728 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 31700 ms
+data normalization complete : 24738 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 316.76 photon/ms
-total simulated energy: 10000000.00	absorbed: 74.04166%
+MCX simulation speed: 406.39 photon/ms
+total simulated energy: 10000000.00	absorbed: 99.67768%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -126,13 +126,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	28404 ms
-retrieving fields ... 	detected 9949780 photons, total: 9949780	transfer complete:	28493 ms
+kernel complete:  	24610 ms
+retrieving fields ... 	detected 9891525 photons, total: 9891525	transfer complete:	24701 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 28504 ms
+data normalization complete : 24712 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 352.36 photon/ms
-total simulated energy: 10000000.00	absorbed: 71.77992%
+MCX simulation speed: 406.80 photon/ms
+total simulated energy: 10000000.00	absorbed: 99.59565%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -160,13 +160,47 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	25410 ms
-retrieving fields ... 	detected 9946706 photons, total: 9946706	transfer complete:	25498 ms
+kernel complete:  	23858 ms
+retrieving fields ... 	detected 9889949 photons, total: 9889949	transfer complete:	23960 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 25508 ms
+data normalization complete : 23973 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 393.92 photon/ms
-total simulated energy: 10000000.00	absorbed: 71.33118%
+MCX simulation speed: 419.57 photon/ms
+total simulated energy: 10000000.00	absorbed: 99.56363%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 1 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	24756 ms
+retrieving fields ... 	detected 9888798 photons, total: 9888798	transfer complete:	24845 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 24856 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 404.35 photon/ms
+total simulated energy: 10000000.00	absorbed: 99.53867%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -194,13 +228,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	23087 ms
-retrieving fields ... 	detected 9943100 photons, total: 9943100	transfer complete:	23185 ms
+kernel complete:  	23678 ms
+retrieving fields ... 	detected 9886986 photons, total: 9886986	transfer complete:	23769 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 23196 ms
+data normalization complete : 23780 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 433.65 photon/ms
-total simulated energy: 10000000.00	absorbed: 71.06370%
+MCX simulation speed: 422.76 photon/ms
+total simulated energy: 10000000.00	absorbed: 99.55398%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -228,13 +262,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	22699 ms
-retrieving fields ... 	detected 9939853 photons, total: 9939853	transfer complete:	22788 ms
+kernel complete:  	24447 ms
+retrieving fields ... 	detected 9885671 photons, total: 9885671	transfer complete:	24535 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 22798 ms
+data normalization complete : 24544 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 441.01 photon/ms
-total simulated energy: 10000000.00	absorbed: 72.01217%
+MCX simulation speed: 409.45 photon/ms
+total simulated energy: 10000000.00	absorbed: 99.64826%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -262,13 +296,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	20689 ms
-retrieving fields ... 	detected 9936227 photons, total: 9936227	transfer complete:	20778 ms
+kernel complete:  	22536 ms
+retrieving fields ... 	detected 9884214 photons, total: 9884214	transfer complete:	22626 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 20789 ms
+data normalization complete : 22636 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 483.93 photon/ms
-total simulated energy: 10000000.00	absorbed: 77.17960%
+MCX simulation speed: 444.21 photon/ms
+total simulated energy: 10000000.00	absorbed: 99.78790%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -296,13 +330,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	19740 ms
-retrieving fields ... 	detected 9932156 photons, total: 9932156	transfer complete:	19831 ms
+kernel complete:  	22862 ms
+retrieving fields ... 	detected 9883222 photons, total: 9883222	transfer complete:	22951 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 19840 ms
+data normalization complete : 22962 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 507.20 photon/ms
-total simulated energy: 10000000.00	absorbed: 83.58546%
+MCX simulation speed: 437.89 photon/ms
+total simulated energy: 10000000.00	absorbed: 99.84357%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -330,13 +364,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	17397 ms
-retrieving fields ... 	detected 9928394 photons, total: 9928394	transfer complete:	17487 ms
+kernel complete:  	22433 ms
+retrieving fields ... 	detected 9881615 photons, total: 9881615	transfer complete:	22522 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 17496 ms
+data normalization complete : 22532 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 575.61 photon/ms
-total simulated energy: 10000000.00	absorbed: 87.25015%
+MCX simulation speed: 446.25 photon/ms
+total simulated energy: 10000000.00	absorbed: 99.82188%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -364,13 +398,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	16444 ms
-retrieving fields ... 	detected 9924328 photons, total: 9924328	transfer complete:	16546 ms
+kernel complete:  	22028 ms
+retrieving fields ... 	detected 9880110 photons, total: 9880110	transfer complete:	22122 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 16557 ms
+data normalization complete : 22134 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 609.01 photon/ms
-total simulated energy: 10000000.00	absorbed: 86.19844%
+MCX simulation speed: 454.46 photon/ms
+total simulated energy: 10000000.00	absorbed: 99.78039%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -398,13 +432,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	15491 ms
-retrieving fields ... 	detected 9920069 photons, total: 9920069	transfer complete:	15583 ms
+kernel complete:  	21664 ms
+retrieving fields ... 	detected 9878407 photons, total: 9878407	transfer complete:	21753 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 15594 ms
+data normalization complete : 21763 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 646.54 photon/ms
-total simulated energy: 10000000.00	absorbed: 84.36798%
+MCX simulation speed: 462.11 photon/ms
+total simulated energy: 10000000.00	absorbed: 99.82389%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -432,13 +466,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	14709 ms
-retrieving fields ... 	detected 9915698 photons, total: 9915698	transfer complete:	14797 ms
+kernel complete:  	21455 ms
+retrieving fields ... 	detected 9877176 photons, total: 9877176	transfer complete:	21544 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 14808 ms
+data normalization complete : 21555 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 681.01 photon/ms
-total simulated energy: 10000000.00	absorbed: 87.34590%
+MCX simulation speed: 466.61 photon/ms
+total simulated energy: 10000000.00	absorbed: 99.83652%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -466,13 +500,47 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	13168 ms
-retrieving fields ... 	detected 9911088 photons, total: 9911088	transfer complete:	13268 ms
+kernel complete:  	21304 ms
+retrieving fields ... 	detected 9876036 photons, total: 9876036	transfer complete:	21406 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 13279 ms
+data normalization complete : 21417 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 760.80 photon/ms
-total simulated energy: 10000000.00	absorbed: 88.66954%
+MCX simulation speed: 469.92 photon/ms
+total simulated energy: 10000000.00	absorbed: 99.49207%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 1 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	20572 ms
+retrieving fields ... 	detected 9874662 photons, total: 9874662	transfer complete:	20677 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 20695 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 486.69 photon/ms
+total simulated energy: 10000000.00	absorbed: 97.98794%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -500,13 +568,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	12434 ms
-retrieving fields ... 	detected 9906354 photons, total: 9906354	transfer complete:	12536 ms
+kernel complete:  	22081 ms
+retrieving fields ... 	detected 9873026 photons, total: 9873026	transfer complete:	22190 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 12547 ms
+data normalization complete : 22201 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 805.80 photon/ms
-total simulated energy: 10000000.00	absorbed: 77.09596%
+MCX simulation speed: 453.39 photon/ms
+total simulated energy: 10000000.00	absorbed: 96.06003%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -534,13 +602,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	12053 ms
-retrieving fields ... 	detected 9901403 photons, total: 9901403	transfer complete:	12153 ms
+kernel complete:  	20062 ms
+retrieving fields ... 	detected 9871796 photons, total: 9871796	transfer complete:	20167 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 12162 ms
+data normalization complete : 20178 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 831.46 photon/ms
-total simulated energy: 10000000.00	absorbed: 63.61517%
+MCX simulation speed: 499.05 photon/ms
+total simulated energy: 10000000.00	absorbed: 93.89315%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -568,13 +636,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	11275 ms
-retrieving fields ... 	detected 9896227 photons, total: 9896227	transfer complete:	11368 ms
+kernel complete:  	20072 ms
+retrieving fields ... 	detected 9870554 photons, total: 9870554	transfer complete:	20177 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 11379 ms
+data normalization complete : 20188 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 888.81 photon/ms
-total simulated energy: 10000000.00	absorbed: 56.99164%
+MCX simulation speed: 498.80 photon/ms
+total simulated energy: 10000000.00	absorbed: 91.78925%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -602,13 +670,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	10866 ms
-retrieving fields ... 	detected 9890904 photons, total: 9890904	transfer complete:	10965 ms
+kernel complete:  	19403 ms
+retrieving fields ... 	detected 9869310 photons, total: 9869310	transfer complete:	19508 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 10976 ms
+data normalization complete : 19519 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 922.34 photon/ms
-total simulated energy: 10000000.00	absorbed: 49.94779%
+MCX simulation speed: 516.02 photon/ms
+total simulated energy: 10000000.00	absorbed: 90.04061%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -636,13 +704,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	9853 ms
-retrieving fields ... 	detected 9885279 photons, total: 9885279	transfer complete:	9940 ms
+kernel complete:  	19075 ms
+retrieving fields ... 	detected 9867920 photons, total: 9867920	transfer complete:	19179 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 9949 ms
+data normalization complete : 19188 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1017.40 photon/ms
-total simulated energy: 10000000.00	absorbed: 45.64648%
+MCX simulation speed: 524.91 photon/ms
+total simulated energy: 10000000.00	absorbed: 88.63116%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -670,13 +738,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	9349 ms
-retrieving fields ... 	detected 9879807 photons, total: 9879807	transfer complete:	9432 ms
+kernel complete:  	20578 ms
+retrieving fields ... 	detected 9866709 photons, total: 9866709	transfer complete:	20683 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 9441 ms
+data normalization complete : 20694 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1072.39 photon/ms
-total simulated energy: 10000000.00	absorbed: 43.34003%
+MCX simulation speed: 486.52 photon/ms
+total simulated energy: 10000000.00	absorbed: 87.20425%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -704,13 +772,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	8969 ms
-retrieving fields ... 	detected 9873466 photons, total: 9873466	transfer complete:	9060 ms
+kernel complete:  	19213 ms
+retrieving fields ... 	detected 9865394 photons, total: 9865394	transfer complete:	19316 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 9071 ms
+data normalization complete : 19325 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1118.07 photon/ms
-total simulated energy: 10000000.00	absorbed: 42.15538%
+MCX simulation speed: 521.13 photon/ms
+total simulated energy: 10000000.00	absorbed: 85.91232%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -738,13 +806,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	8851 ms
-retrieving fields ... 	detected 9868074 photons, total: 9868074	transfer complete:	8939 ms
+kernel complete:  	19604 ms
+retrieving fields ... 	detected 9864361 photons, total: 9864361	transfer complete:	19704 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 8949 ms
+data normalization complete : 19714 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1132.89 photon/ms
-total simulated energy: 10000000.00	absorbed: 41.12543%
+MCX simulation speed: 510.73 photon/ms
+total simulated energy: 10000000.00	absorbed: 84.60477%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -772,13 +840,47 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	8421 ms
-retrieving fields ... 	detected 9861737 photons, total: 9861737	transfer complete:	8509 ms
+kernel complete:  	18438 ms
+retrieving fields ... 	detected 9862971 photons, total: 9862971	transfer complete:	18542 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 8518 ms
+data normalization complete : 18551 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1190.90 photon/ms
-total simulated energy: 10000000.00	absorbed: 39.83915%
+MCX simulation speed: 543.07 photon/ms
+total simulated energy: 10000000.00	absorbed: 83.36994%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 1 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	18506 ms
+retrieving fields ... 	detected 9861344 photons, total: 9861344	transfer complete:	18607 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 18618 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 541.18 photon/ms
+total simulated energy: 10000000.00	absorbed: 82.62760%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -806,13 +908,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	7949 ms
-retrieving fields ... 	detected 9855350 photons, total: 9855350	transfer complete:	8039 ms
+kernel complete:  	18305 ms
+retrieving fields ... 	detected 9860385 photons, total: 9860385	transfer complete:	18406 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 8048 ms
+data normalization complete : 18415 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1261.83 photon/ms
-total simulated energy: 10000000.00	absorbed: 38.47095%
+MCX simulation speed: 547.08 photon/ms
+total simulated energy: 10000000.00	absorbed: 81.99605%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -840,13 +942,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	7714 ms
-retrieving fields ... 	detected 9848602 photons, total: 9848602	transfer complete:	7804 ms
+kernel complete:  	18183 ms
+retrieving fields ... 	detected 9859144 photons, total: 9859144	transfer complete:	18283 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 7813 ms
+data normalization complete : 18292 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1300.56 photon/ms
-total simulated energy: 10000000.00	absorbed: 37.54127%
+MCX simulation speed: 550.69 photon/ms
+total simulated energy: 10000000.00	absorbed: 81.70475%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -874,13 +976,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	7479 ms
-retrieving fields ... 	detected 9841691 photons, total: 9841691	transfer complete:	7569 ms
+kernel complete:  	18136 ms
+retrieving fields ... 	detected 9858003 photons, total: 9858003	transfer complete:	18236 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 7578 ms
+data normalization complete : 18245 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1341.38 photon/ms
-total simulated energy: 10000000.00	absorbed: 37.29707%
+MCX simulation speed: 552.15 photon/ms
+total simulated energy: 10000000.00	absorbed: 81.51877%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -908,13 +1010,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	7172 ms
-retrieving fields ... 	detected 9834941 photons, total: 9834941	transfer complete:	7263 ms
+kernel complete:  	17226 ms
+retrieving fields ... 	detected 9856993 photons, total: 9856993	transfer complete:	17327 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 7272 ms
+data normalization complete : 17336 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1399.19 photon/ms
-total simulated energy: 10000000.00	absorbed: 37.55254%
+MCX simulation speed: 581.33 photon/ms
+total simulated energy: 10000000.00	absorbed: 82.73234%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -942,13 +1044,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	7026 ms
-retrieving fields ... 	detected 9828129 photons, total: 9828129	transfer complete:	7146 ms
+kernel complete:  	17783 ms
+retrieving fields ... 	detected 9855379 photons, total: 9855379	transfer complete:	17901 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 7155 ms
+data normalization complete : 17913 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1428.16 photon/ms
-total simulated energy: 10000000.00	absorbed: 38.34094%
+MCX simulation speed: 563.09 photon/ms
+total simulated energy: 10000000.00	absorbed: 85.06977%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -976,13 +1078,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	6829 ms
-retrieving fields ... 	detected 9820396 photons, total: 9820396	transfer complete:	6921 ms
+kernel complete:  	17529 ms
+retrieving fields ... 	detected 9854225 photons, total: 9854225	transfer complete:	17631 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 6930 ms
+data normalization complete : 17640 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1469.72 photon/ms
-total simulated energy: 10000000.00	absorbed: 39.57459%
+MCX simulation speed: 571.27 photon/ms
+total simulated energy: 10000000.00	absorbed: 86.43980%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1010,13 +1112,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	6233 ms
-retrieving fields ... 	detected 9812628 photons, total: 9812628	transfer complete:	6325 ms
+kernel complete:  	16626 ms
+retrieving fields ... 	detected 9853042 photons, total: 9853042	transfer complete:	16728 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 6336 ms
+data normalization complete : 16738 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1611.34 photon/ms
-total simulated energy: 10000000.00	absorbed: 41.63808%
+MCX simulation speed: 602.34 photon/ms
+total simulated energy: 10000000.00	absorbed: 86.55338%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1044,13 +1146,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	6016 ms
-retrieving fields ... 	detected 9805169 photons, total: 9805169	transfer complete:	6102 ms
+kernel complete:  	16853 ms
+retrieving fields ... 	detected 9851955 photons, total: 9851955	transfer complete:	16955 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 6111 ms
+data normalization complete : 16966 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1668.89 photon/ms
-total simulated energy: 10000000.00	absorbed: 43.82539%
+MCX simulation speed: 594.21 photon/ms
+total simulated energy: 10000000.00	absorbed: 86.61362%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1078,13 +1180,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	5659 ms
-retrieving fields ... 	detected 9797167 photons, total: 9797167	transfer complete:	5740 ms
+kernel complete:  	16860 ms
+retrieving fields ... 	detected 9850321 photons, total: 9850321	transfer complete:	16960 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 5750 ms
+data normalization complete : 16969 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1774.62 photon/ms
-total simulated energy: 10000000.00	absorbed: 45.62922%
+MCX simulation speed: 593.97 photon/ms
+total simulated energy: 10000000.00	absorbed: 86.67080%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1112,13 +1214,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	5414 ms
-retrieving fields ... 	detected 9788947 photons, total: 9788947	transfer complete:	5509 ms
+kernel complete:  	16209 ms
+retrieving fields ... 	detected 9849368 photons, total: 9849368	transfer complete:	16310 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 5519 ms
+data normalization complete : 16319 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1855.29 photon/ms
-total simulated energy: 10000000.00	absorbed: 46.49688%
+MCX simulation speed: 617.89 photon/ms
+total simulated energy: 10000000.00	absorbed: 87.03520%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1146,13 +1248,47 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	5289 ms
-retrieving fields ... 	detected 9780326 photons, total: 9780326	transfer complete:	5378 ms
+kernel complete:  	16809 ms
+retrieving fields ... 	detected 9848033 photons, total: 9848033	transfer complete:	16912 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 5387 ms
+data normalization complete : 16921 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1899.34 photon/ms
-total simulated energy: 10000000.00	absorbed: 47.29118%
+MCX simulation speed: 595.77 photon/ms
+total simulated energy: 10000000.00	absorbed: 87.49090%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 1 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	16256 ms
+retrieving fields ... 	detected 9846758 photons, total: 9846758	transfer complete:	16358 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 16368 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 616.14 photon/ms
+total simulated energy: 10000000.00	absorbed: 88.02473%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1180,13 +1316,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	5167 ms
-retrieving fields ... 	detected 9771690 photons, total: 9771690	transfer complete:	5266 ms
+kernel complete:  	15304 ms
+retrieving fields ... 	detected 9845815 photons, total: 9845815	transfer complete:	15406 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 5275 ms
+data normalization complete : 15415 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 1944.39 photon/ms
-total simulated energy: 10000000.00	absorbed: 47.98058%
+MCX simulation speed: 654.49 photon/ms
+total simulated energy: 10000000.00	absorbed: 88.63992%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1214,13 +1350,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4935 ms
-retrieving fields ... 	detected 9763584 photons, total: 9763584	transfer complete:	5044 ms
+kernel complete:  	15526 ms
+retrieving fields ... 	detected 9844180 photons, total: 9844180	transfer complete:	15631 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 5054 ms
+data normalization complete : 15642 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2036.25 photon/ms
-total simulated energy: 10000000.00	absorbed: 48.95617%
+MCX simulation speed: 645.08 photon/ms
+total simulated energy: 10000000.00	absorbed: 89.11952%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1248,13 +1384,47 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4796 ms
-retrieving fields ... 	detected 9753689 photons, total: 9753689	transfer complete:	4896 ms
+kernel complete:  	15495 ms
+retrieving fields ... 	detected 9843303 photons, total: 9843303	transfer complete:	15595 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 4905 ms
+data normalization complete : 15605 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2096.00 photon/ms
-total simulated energy: 10000000.00	absorbed: 50.02756%
+MCX simulation speed: 646.37 photon/ms
+total simulated energy: 10000000.00	absorbed: 89.48157%
+(loss due to initial specular reflection is excluded in the total)
+###############################################################################
+#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
+#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
+#                https://mcx.space/  &  https://neurojson.io                  #
+#                                                                             #
+# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
+#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
+###############################################################################
+#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
+###############################################################################
+#  Open-source codes and reusable scientific data are essential for research, #
+# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
+#                                                                             #
+#Please visit our free scientific data sharing portal at https://neurojson.io #
+# and consider sharing your public datasets in standardized JSON/JData format #
+###############################################################################
+$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
+###############################################################################
+- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
+- compiled with: RNG [xorshift128+] with Seed Length [4]
+
+GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
+initializing streams ...	init complete : 1 ms
+requesting 1792 bytes of shared memory
+launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
+simulation run# 1 ... 
+kernel complete:  	15866 ms
+retrieving fields ... 	detected 9841825 photons, total: 9841825	transfer complete:	15966 ms
+normalizing raw data ...	source 1, normalization factor alpha=0.200000
+data normalization complete : 15975 ms
+simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
+MCX simulation speed: 631.23 photon/ms
+total simulated energy: 10000000.00	absorbed: 89.80611%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1282,13 +1452,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4536 ms
-retrieving fields ... 	detected 9745129 photons, total: 9745129	transfer complete:	4635 ms
+kernel complete:  	15053 ms
+retrieving fields ... 	detected 9840758 photons, total: 9840758	transfer complete:	15153 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 4644 ms
+data normalization complete : 15163 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2217.29 photon/ms
-total simulated energy: 10000000.00	absorbed: 51.25183%
+MCX simulation speed: 665.38 photon/ms
+total simulated energy: 10000000.00	absorbed: 90.15346%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1316,13 +1486,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4431 ms
-retrieving fields ... 	detected 9735100 photons, total: 9735100	transfer complete:	4530 ms
+kernel complete:  	14798 ms
+retrieving fields ... 	detected 9839752 photons, total: 9839752	transfer complete:	14898 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 4541 ms
+data normalization complete : 14908 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2269.63 photon/ms
-total simulated energy: 10000000.00	absorbed: 52.88754%
+MCX simulation speed: 676.86 photon/ms
+total simulated energy: 10000000.00	absorbed: 90.43528%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1350,13 +1520,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4279 ms
-retrieving fields ... 	detected 9724937 photons, total: 9724937	transfer complete:	4379 ms
+kernel complete:  	14998 ms
+retrieving fields ... 	detected 9838692 photons, total: 9838692	transfer complete:	15099 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 4388 ms
+data normalization complete : 15110 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2350.18 photon/ms
-total simulated energy: 10000000.00	absorbed: 54.26675%
+MCX simulation speed: 667.82 photon/ms
+total simulated energy: 10000000.00	absorbed: 90.69781%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1384,13 +1554,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	4171 ms
-retrieving fields ... 	detected 9715627 photons, total: 9715627	transfer complete:	4260 ms
+kernel complete:  	15091 ms
+retrieving fields ... 	detected 9837462 photons, total: 9837462	transfer complete:	15194 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 4269 ms
+data normalization complete : 15203 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2411.96 photon/ms
-total simulated energy: 10000000.00	absorbed: 55.27180%
+MCX simulation speed: 663.70 photon/ms
+total simulated energy: 10000000.00	absorbed: 90.91319%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1418,13 +1588,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	3982 ms
-retrieving fields ... 	detected 9704800 photons, total: 9704800	transfer complete:	4071 ms
+kernel complete:  	14306 ms
+retrieving fields ... 	detected 9836053 photons, total: 9836053	transfer complete:	14406 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 4080 ms
+data normalization complete : 14415 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2526.53 photon/ms
-total simulated energy: 10000000.00	absorbed: 56.16255%
+MCX simulation speed: 700.18 photon/ms
+total simulated energy: 10000000.00	absorbed: 91.10478%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1452,13 +1622,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	3922 ms
-retrieving fields ... 	detected 9694419 photons, total: 9694419	transfer complete:	4004 ms
+kernel complete:  	14688 ms
+retrieving fields ... 	detected 9834901 photons, total: 9834901	transfer complete:	14813 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 4013 ms
+data normalization complete : 14823 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2565.42 photon/ms
-total simulated energy: 10000000.00	absorbed: 57.15553%
+MCX simulation speed: 681.94 photon/ms
+total simulated energy: 10000000.00	absorbed: 91.23682%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1486,13 +1656,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	3767 ms
-retrieving fields ... 	detected 9684049 photons, total: 9684049	transfer complete:	3851 ms
+kernel complete:  	15025 ms
+retrieving fields ... 	detected 9833749 photons, total: 9833749	transfer complete:	15127 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 3860 ms
+data normalization complete : 15136 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2671.65 photon/ms
-total simulated energy: 10000000.00	absorbed: 58.13168%
+MCX simulation speed: 666.67 photon/ms
+total simulated energy: 10000000.00	absorbed: 91.30482%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1520,13 +1690,13 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	3651 ms
-retrieving fields ... 	detected 9672977 photons, total: 9672977	transfer complete:	3736 ms
+kernel complete:  	14227 ms
+retrieving fields ... 	detected 9832532 photons, total: 9832532	transfer complete:	14328 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 3745 ms
+data normalization complete : 14337 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2757.10 photon/ms
-total simulated energy: 10000000.00	absorbed: 59.22144%
+MCX simulation speed: 704.08 photon/ms
+total simulated energy: 10000000.00	absorbed: 91.25680%
 (loss due to initial specular reflection is excluded in the total)
 ###############################################################################
 #                      Monte Carlo eXtreme (MCX) -- CUDA                      #
@@ -1554,181 +1724,11 @@ initializing streams ...	init complete : 0 ms
 requesting 1792 bytes of shared memory
 launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
 simulation run# 1 ... 
-kernel complete:  	3552 ms
-retrieving fields ... 	detected 9662420 photons, total: 9662420	transfer complete:	3641 ms
+kernel complete:  	14081 ms
+retrieving fields ... 	detected 9831731 photons, total: 9831731	transfer complete:	14186 ms
 normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 3650 ms
+data normalization complete : 14197 ms
 simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2834.47 photon/ms
-total simulated energy: 10000000.00	absorbed: 60.20861%
-(loss due to initial specular reflection is excluded in the total)
-###############################################################################
-#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io                  #
-#                                                                             #
-# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
-#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
-###############################################################################
-#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
-###############################################################################
-#  Open-source codes and reusable scientific data are essential for research, #
-# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
-#                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io #
-# and consider sharing your public datasets in standardized JSON/JData format #
-###############################################################################
-$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
-###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
-- compiled with: RNG [xorshift128+] with Seed Length [4]
-
-GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
-initializing streams ...	init complete : 0 ms
-requesting 1792 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
-simulation run# 1 ... 
-kernel complete:  	3463 ms
-retrieving fields ... 	detected 9651414 photons, total: 9651414	transfer complete:	3551 ms
-normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 3560 ms
-simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 2911.21 photon/ms
-total simulated energy: 10000000.00	absorbed: 61.24988%
-(loss due to initial specular reflection is excluded in the total)
-###############################################################################
-#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io                  #
-#                                                                             #
-# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
-#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
-###############################################################################
-#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
-###############################################################################
-#  Open-source codes and reusable scientific data are essential for research, #
-# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
-#                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io #
-# and consider sharing your public datasets in standardized JSON/JData format #
-###############################################################################
-$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
-###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
-- compiled with: RNG [xorshift128+] with Seed Length [4]
-
-GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
-initializing streams ...	init complete : 0 ms
-requesting 1792 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
-simulation run# 1 ... 
-kernel complete:  	3341 ms
-retrieving fields ... 	detected 9639733 photons, total: 9639733	transfer complete:	3428 ms
-normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 3437 ms
-simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 3016.59 photon/ms
-total simulated energy: 10000000.00	absorbed: 62.60226%
-(loss due to initial specular reflection is excluded in the total)
-###############################################################################
-#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io                  #
-#                                                                             #
-# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
-#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
-###############################################################################
-#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
-###############################################################################
-#  Open-source codes and reusable scientific data are essential for research, #
-# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
-#                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io #
-# and consider sharing your public datasets in standardized JSON/JData format #
-###############################################################################
-$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
-###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
-- compiled with: RNG [xorshift128+] with Seed Length [4]
-
-GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
-initializing streams ...	init complete : 0 ms
-requesting 1792 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
-simulation run# 1 ... 
-kernel complete:  	3312 ms
-retrieving fields ... 	detected 9627733 photons, total: 9627733	transfer complete:	3401 ms
-normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 3412 ms
-simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 3045.99 photon/ms
-total simulated energy: 10000000.00	absorbed: 64.56567%
-(loss due to initial specular reflection is excluded in the total)
-###############################################################################
-#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io                  #
-#                                                                             #
-# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
-#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
-###############################################################################
-#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
-###############################################################################
-#  Open-source codes and reusable scientific data are essential for research, #
-# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
-#                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io #
-# and consider sharing your public datasets in standardized JSON/JData format #
-###############################################################################
-$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
-###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
-- compiled with: RNG [xorshift128+] with Seed Length [4]
-
-GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
-initializing streams ...	init complete : 0 ms
-requesting 1792 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
-simulation run# 1 ... 
-kernel complete:  	3167 ms
-retrieving fields ... 	detected 9615300 photons, total: 9615300	transfer complete:	3257 ms
-normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 3266 ms
-simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 3181.67 photon/ms
-total simulated energy: 10000000.00	absorbed: 66.91253%
-(loss due to initial specular reflection is excluded in the total)
-###############################################################################
-#                      Monte Carlo eXtreme (MCX) -- CUDA                      #
-#          Copyright (c) 2009-2025 Qianqian Fang <q.fang at neu.edu>          #
-#                https://mcx.space/  &  https://neurojson.io                  #
-#                                                                             #
-# Computational Optics & Translational Imaging (COTI) Lab- http://fanglab.org #
-#   Department of Bioengineering, Northeastern University, Boston, MA, USA    #
-###############################################################################
-#    The MCX Project is funded by the NIH/NIGMS under grant R01-GM114365      #
-###############################################################################
-#  Open-source codes and reusable scientific data are essential for research, #
-# MCX proudly developed human-readable JSON-based data formats for easy reuse.#
-#                                                                             #
-#Please visit our free scientific data sharing portal at https://neurojson.io #
-# and consider sharing your public datasets in standardized JSON/JData format #
-###############################################################################
-$Rev::0fcc04 $ v2025 $Date::2025-02-12 23:26:11 -05$ by $Author::Qianqian Fang$
-###############################################################################
-- code name: [Fermi MCX] compiled by nvcc [9.2] for CUDA-arch [350] on [Feb 13 2025]
-- compiled with: RNG [xorshift128+] with Seed Length [4]
-
-GPU=5 (Quadro RTX 8000) threadph=67 extra=120448 np=10000000 nthread=147456 maxgate=1 repetition=1
-initializing streams ...	init complete : 0 ms
-requesting 1792 bytes of shared memory
-launching MCX simulation for time window [0.00e+00ns 5.00e+02ns] ...
-simulation run# 1 ... 
-kernel complete:  	3064 ms
-retrieving fields ... 	detected 9602841 photons, total: 9602841	transfer complete:	3160 ms
-normalizing raw data ...	source 1, normalization factor alpha=0.200000
-data normalization complete : 3169 ms
-simulated 10000000 photons (10000000) with 147456 threads (repeat x1)
-MCX simulation speed: 3289.47 photon/ms
-total simulated energy: 10000000.00	absorbed: 70.22843%
+MCX simulation speed: 711.39 photon/ms
+total simulated energy: 10000000.00	absorbed: 91.20360%
 (loss due to initial specular reflection is excluded in the total)
