@@ -244,6 +244,9 @@ class DataLoaderHELICOID(DataLoader):
             wavelength_idxs &= new_idxs
         self.wavelength_idxs = wavelength_idxs
         self.wavelengths = self.wavelengths[wavelength_idxs]
+
+        # reference pixel as index in all tissue pixels 
+        self.reference_pixel_tissue_ctr = 50
     
     def load_data(self, patient_id):
         p = self.path / patient_id
@@ -281,10 +284,9 @@ class DataLoaderHELICOID(DataLoader):
         
         label_idxs = np.nonzero(self.label_map == label_num) # returns two lists
         #pixel_idx = len(label_idxs[0]) // 20
-        pixel_idx = 50
+        pixel_idx = self.reference_pixel_tissue_ctr
         self.reference_pixel = np.array([label_idxs[0][pixel_idx], label_idxs[1][pixel_idx]])
-        # reference pixel as index in all tissue pixels 
-        self.reference_pixel_tissue_ctr = pixel_idx
+    
         
         self.reference_reflectance = self.reflectance[:, self.reference_pixel[0], self.reference_pixel[1]]
 
