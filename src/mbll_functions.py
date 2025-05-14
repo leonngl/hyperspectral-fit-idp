@@ -182,6 +182,21 @@ try:
 except FileNotFoundError:
     print("Could load function data to define jacques derivatives.")
 
+try:
+    mu_a, mu_s_red = symbols("mu_a mu_s_red", positive=True)
+    m1, m2, m3 = symbols("m1 m2 m3")
+    with open(config.diffusion_derivative_dir / "jacques2.pickle", "rb") as f:
+        jacques_pl_2 = pickle.load(f)
+        jacques_pl_2_lambdified = lambdify((mu_a, mu_s_red, m1, m2, m3), jacques_pl_2)
+
+        def A_jacques_pathlength_2(wavelengths, mu_a_matrix, c, a, b, m1, m2, m3):
+            mu_a = mu_a_matrix @ c
+            mu_s_red = reduced_scattering(wavelengths, a, b)
+            return jacques_pl_2_lambdified(mu_a[..., None], mu_s_red, m1, m2, m3)
+
+except FileNotFoundError:
+    print("Could load function data to define second type of jacques pathlength.")
+
 # the first and second row of c should contain f_blood and st02, respectively
 # keeps shape of input
 def blood_fraction_to_concentrations(c):
