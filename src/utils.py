@@ -36,7 +36,7 @@ def compare_and_update_config(score, config, checkpoint_path, overwrite_regardle
     
     return score, config
 
-
+# taken from https://jwalton.info/Embed-Publication-Matplotlib-Latex/
 def set_size(width, height=None, fraction=1, subplots=(1, 1)):
     """Set figure dimensions to avoid scaling in LaTeX.
 
